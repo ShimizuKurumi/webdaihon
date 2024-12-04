@@ -317,3 +317,13 @@ html {
         background-color: $color-bg;
     }
 }
+
+@keyframes black {
+    0% {
+        background-color: $color-bg;
+    }
+
+    100% {
+        background-color: #000;
+    }
+}

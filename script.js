@@ -61,7 +61,7 @@ $(document).ready(function () {
 
     $(document).keydown(function (e) {
         if (e.which === 37) { // 左矢印キー
-            $(".paragraph__wrapper").css("transform", "translateX(" + count * 4 + "%)");
+            $(".paragraph__wrapper").css("transform", "translateX(" + count * 3 + "%)");
             console.log(count);
 
 
@@ -281,7 +281,7 @@ $(document).ready(function () {
             };
 
             console.log(count);
-            $(".paragraph__wrapper").css("transform", "translateX(" + (count * 4) + "%)");
+            $(".paragraph__wrapper").css("transform", "translateX(" + (count * 3) + "%)");
 
             if (count < 1) {
                 // カウントが1になったときに行う処理
@@ -322,6 +322,7 @@ $(document).ready(function () {
                 $('.paragraph--8').css({
                     'opacity': "0",
                 });
+
             }
             else if (count < 8) {
                 $('.paragraph--9').css({
@@ -365,6 +366,39 @@ $(document).ready(function () {
                 $('.paragraph--10').css({
                     'opacity': "0",
                 });
+                $('.bar').css({
+                    'background-color': "#000",
+                })
+                $('.body').css({
+                    'background-color': "#000",
+                });
+                $('.paragraph__wrapper').css({
+                    'color': "#F9EFE1",
+                });
+                $('.help__text').css({
+                    'color': "#F9EFE1",
+                });
+                $('.line--top').css({
+                    'background-color': "#F9EFE1",
+                });
+                $('.line--bottom').css({
+                    'background-color': "#F9EFE1",
+                });
+                $('.line--right').css({
+                    'background-color': "#F9EFE1",
+                }); $('.line--left').css({
+                    'background-color': "#F9EFE1",
+                });
+                $('.cls-1').css({
+                    'fill': "#F9EFE1",
+                });
+                $('.bg-eye').css({
+                    'opacity': "0",
+                });
+                $('.st0').css({
+                    'fill': "#F9EFE1",
+                });
+
             }
             else if (count < 10) {
                 $('.paragraph--11').css({

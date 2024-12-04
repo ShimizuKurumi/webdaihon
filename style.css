@@ -321,4 +321,20 @@ html {
     background-color: #F9EFE1;
   }
 }
+@-webkit-keyframes black {
+  0% {
+    background-color: #F9EFE1;
+  }
+  100% {
+    background-color: #000;
+  }
+}
+@keyframes black {
+  0% {
+    background-color: #F9EFE1;
+  }
+  100% {
+    background-color: #000;
+  }
+}
 /*# sourceMappingURL=style.css.map */
