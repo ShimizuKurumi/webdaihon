@@ -256,6 +256,10 @@ $(document).ready(function () {
                 $('.paragraph--17').css({
                     'opacity': "1",
                 });
+                $('.bg-eye').css({
+                    'opacity': "0.1",
+                });
+
             } else if (count === 17) {
                 $('.paragraph--18').css({
                     'opacity': "1",
@@ -425,17 +429,22 @@ $(document).ready(function () {
                 $('.paragraph--15').css({
                     'opacity': "0",
                 });
-                $('.bg-eye').css({
-                    'opacity': "0",
-                });
             } else if (count < 15) {
                 $('.paragraph--16').css({
                     'opacity': "0",
                 });
+                $('.bg-eye').css({
+                    'opacity': "0.1",
+                });
+
             } else if (count < 16) {
                 $('.paragraph--17').css({
                     'opacity': "0",
                 });
+                $('.bg-eye').css({
+                    'opacity': "0",
+                });
+
             } else if (count < 17) {
                 $('.paragraph--18').css({
                     'opacity': "0",
