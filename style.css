@@ -73,7 +73,7 @@ html {
             animation-timing-function: step-end;
   }
   100% {
-    background-image: url(./images/opening3.jpg);
+    background-image: url(./images/opening4.jpg);
     -webkit-animation-timing-function: ease;
             animation-timing-function: ease;
   }
@@ -111,7 +111,7 @@ html {
             animation-timing-function: step-end;
   }
   100% {
-    background-image: url(./images/opening3.jpg);
+    background-image: url(./images/opening4.jpg);
     -webkit-animation-timing-function: ease;
             animation-timing-function: ease;
   }

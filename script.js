@@ -61,9 +61,13 @@ $(document).ready(function () {
 
     $(document).keydown(function (e) {
         if (e.which === 37) { // 左矢印キー
-            count++;
-            $(".paragraph__wrapper").css("transform", "translateX(" + count * 5 + "%)");
+            $(".paragraph__wrapper").css("transform", "translateX(" + count * 4 + "%)");
             console.log(count);
+
+
+            if (0 <= count) {
+                count++;
+            };
 
 
             if (count === 1) {
@@ -232,12 +236,48 @@ $(document).ready(function () {
                     'opacity': "1",
                 });
             }
+            else if (count === 13) {
+                $('.paragraph--14').css({
+                    'opacity': "1",
+                });
+            }
+            else if (count === 14) {
+                $('.paragraph--15').css({
+                    'opacity': "1",
+                });
+            } else if (count === 15) {
+                $('.paragraph--16').css({
+                    'opacity': "1",
+                });
+                $('.bg-eye').css({
+                    'opacity': "0",
+                });
+            } else if (count === 16) {
+                $('.paragraph--17').css({
+                    'opacity': "1",
+                });
+            } else if (count === 17) {
+                $('.paragraph--18').css({
+                    'opacity': "1",
+                });
+            } else if (count === 18) {
+                $('.paragraph--19').css({
+                    'opacity': "1",
+                });
+                $('#clock')[0].play();
+            }
 
         }
+
+
+        //右矢印キー-------------------------------------
         else if (e.which === 39) { // 右矢印キー
-            count--;
+            if (0 < count) {
+                count--;
+            };
+
             console.log(count);
-            $(".paragraph__wrapper").css("transform", "translateX(" + (count * 5) + "%)");
+            $(".paragraph__wrapper").css("transform", "translateX(" + (count * 4) + "%)");
 
             if (count < 1) {
                 // カウントが1になったときに行う処理
@@ -278,7 +318,6 @@ $(document).ready(function () {
                 $('.paragraph--8').css({
                     'opacity': "0",
                 });
-
             }
             else if (count < 8) {
                 $('.paragraph--9').css({
@@ -318,20 +357,17 @@ $(document).ready(function () {
                 });
 
             }
-
             else if (count < 9) {
                 $('.paragraph--10').css({
                     'opacity': "0",
                 });
             }
-
             else if (count < 10) {
                 $('.paragraph--11').css({
                     'opacity': "0",
                 });
 
             }
-
             else if (count < 11) {
                 $('.paragraph--12').css({
                     'opacity': "0",
@@ -376,10 +412,40 @@ $(document).ready(function () {
                 });
 
             }
-
             else if (count < 12) {
-
+                $('.paragraph--13').css({
+                    'opacity': "0",
+                });
             }
+            else if (count < 13) {
+                $('.paragraph--14').css({
+                    'opacity': "0",
+                });
+            } else if (count < 14) {
+                $('.paragraph--15').css({
+                    'opacity': "0",
+                });
+                $('.bg-eye').css({
+                    'opacity': "0",
+                });
+            } else if (count < 15) {
+                $('.paragraph--16').css({
+                    'opacity': "0",
+                });
+            } else if (count < 16) {
+                $('.paragraph--17').css({
+                    'opacity': "0",
+                });
+            } else if (count < 17) {
+                $('.paragraph--18').css({
+                    'opacity': "0",
+                });
+            } else if (count < 17) {
+                $('.paragraph--19').css({
+                    'opacity': "0",
+                });
+            }
+
         }
 
     });
