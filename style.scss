@@ -78,6 +78,18 @@ html {
     }
 }
 
+
+.border-line {
+    text-decoration: underline 1px $color-bg;
+    -webkit-text-decoration: underline 1px $color-bg;
+    cursor: pointer;
+    transition: .5s ease;
+
+    &.hover-image {
+        transition: .5s ease;
+    }
+}
+
 .bar {
     background-color: $color-bg;
     width: 3%;
@@ -117,6 +129,10 @@ html {
 .paragraph {
     margin-left: 1em;
 
+    &--29 {
+        margin-right: 2em;
+    }
+
     &__wrapper {
         position: fixed;
         right: 10%;
@@ -130,6 +146,10 @@ html {
         line-height: 2;
         transition: .5s;
         overflow: hidden;
+
+        &--line {
+            position: relative;
+        }
     }
 
 
@@ -272,6 +292,8 @@ html {
     transition: .8s;
 }
 
+
+
 @media screen and (max-width: 480px) {
 
     // /* 480pxまでの幅の場合に適応される */
@@ -325,5 +347,15 @@ html {
 
     100% {
         background-color: #000;
+    }
+}
+
+@keyframes opacity1 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

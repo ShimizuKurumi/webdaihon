@@ -116,6 +116,16 @@ html {
             animation-timing-function: ease;
   }
 }
+.border-line {
+  text-decoration: underline 1px #F9EFE1;
+  -webkit-text-decoration: underline 1px #F9EFE1;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.border-line.hover-image {
+  transition: 0.5s ease;
+}
+
 .bar {
   background-color: #F9EFE1;
   width: 3%;
@@ -153,6 +163,9 @@ html {
   opacity: 0;
   transition: 0.8s;
 }
+.paragraph--29 {
+  margin-right: 2em;
+}
 .paragraph__wrapper {
   position: fixed;
   right: 10%;
@@ -167,6 +180,9 @@ html {
   line-height: 2;
   transition: 0.5s;
   overflow: hidden;
+}
+.paragraph__wrapper--line {
+  position: relative;
 }
 .paragraph--1 {
   opacity: 1;
@@ -335,6 +351,22 @@ html {
   }
   100% {
     background-color: #000;
+  }
+}
+@-webkit-keyframes opacity1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacity1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=style.css.map */

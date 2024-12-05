@@ -61,12 +61,13 @@ $(document).ready(function () {
 
     $(document).keydown(function (e) {
         if (e.which === 37) { // 左矢印キー
-            $(".paragraph__wrapper").css("transform", "translateX(" + count * 3 + "%)");
             console.log(count);
 
 
-            if (0 <= count) {
+            if (0 <= count && count < 28) {
                 count++;
+                $(".paragraph__wrapper").css("transform", "translateX(" + count * 3 + "%)");
+
             };
 
 
@@ -269,6 +270,52 @@ $(document).ready(function () {
                     'opacity': "1",
                 });
                 $('#clock')[0].play();
+            } else if (count === 19) {
+                $('.paragraph--20').css({
+                    'opacity': "1",
+                });
+            } else if (count === 20) {
+                $('.paragraph--21').css({
+                    'opacity': "1",
+                });
+            } else if (count === 21) {
+                $('.paragraph--22').css({
+                    'opacity': "1",
+                });
+            } else if (count === 22) {
+                $('.paragraph--23').css({
+                    'opacity': "1",
+                });
+            } else if (count === 23) {
+                $('.paragraph--24').css({
+                    'opacity': "1",
+                });
+            } else if (count === 24) {
+                $('.paragraph--25').css({
+                    'opacity': "1",
+                });
+
+            } else if (count === 25) {
+                $('#bgm')[0].play();
+                $('.paragraph--26').css({
+                    'opacity': "1",
+                });
+            } else if (count === 26) {
+                $('.paragraph--27').css({
+                    'opacity': "1",
+                });
+
+            } else if (count === 27) {
+                $('.paragraph--28').css({
+                    'opacity': "1",
+                });
+
+            }
+            else if (count === 28) {
+                $('.paragraph--29').css({
+                    'opacity': "1",
+                });
+
             }
 
         }
@@ -276,7 +323,7 @@ $(document).ready(function () {
 
         //右矢印キー-------------------------------------
         else if (e.which === 39) { // 右矢印キー
-            if (0 < count) {
+            if (0 < count || count < 28) {
                 count--;
             };
 
@@ -483,8 +530,51 @@ $(document).ready(function () {
                 $('.paragraph--18').css({
                     'opacity': "0",
                 });
-            } else if (count < 17) {
+            } else if (count < 18) {
                 $('.paragraph--19').css({
+                    'opacity': "0",
+                });
+            } else if (count < 19) {
+                $('.paragraph--20').css({
+                    'opacity': "0",
+                });
+            } else if (count < 20) {
+                $('.paragraph--21').css({
+                    'opacity': "0",
+                });
+            } else if (count < 21) {
+                $('.paragraph--22').css({
+                    'opacity': "0",
+                });
+            } else if (count < 22) {
+                $('.paragraph--23').css({
+                    'opacity': "0",
+                });
+            } else if (count < 23) {
+                $('.paragraph--24').css({
+                    'opacity': "0",
+                });
+            } else if (count < 24) {
+                $('.paragraph--25').css({
+                    'opacity': "0",
+                });
+            } else if (count < 25) {
+                $('.paragraph--26').css({
+                    'opacity': "0",
+                });
+                $('#bgm')[0].pause();
+                $('#bgm')[0].currentTime = 0;
+
+            } else if (count < 26) {
+                $('.paragraph--27').css({
+                    'opacity': "0",
+                });
+            } else if (count < 27) {
+                $('.paragraph--28').css({
+                    'opacity': "0",
+                });
+            } else if (count < 28) {
+                $('.paragraph--29').css({
                     'opacity': "0",
                 });
             }
@@ -499,3 +589,28 @@ $(document).ready(function () {
     // フェードアウトさせたい要素のセレクタをここに指定します
     $('.opening').delay(600).fadeOut(400);
 });
+
+// $(document).ready(function () {
+//     // ホバー対象の要素を指定
+//     $(".border-line").hover(function () {
+//         // 画像の生成
+//         var img = $("<img />");
+//         img.attr("src", "./images/dictionary.png"); // 画像のパスを設定
+//         img.addClass("hover-image"); // 画像にクラスを追加（CSSでスタイルを定義）
+
+//         // 画像を要素の近くに絶対配置
+//         $(this).append(img);
+
+//         // 画像の位置調整 (例: 右上に表示)
+//         $(".hover-image").css({
+//             position: "absolute",
+//             top: "100px",
+//             right: "-220px",
+//             width: "250px",
+//             animation: "opacity1 ease .5s forwards"
+//         });
+//     }, function () {
+//         // ホバー終了時に画像を削除
+//         $(".hover-image").remove();
+//     });
+// });
