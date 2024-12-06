@@ -19,10 +19,9 @@ html {
   width: 100vw;
   height: 100vh;
   max-width: 100%;
-  font-size: 1.2rem;
+  font-size: clamp(15px, 2.5vw, 1.2rem);
   font-family: "Zen Old Mincho", serif;
   letter-spacing: 0.07em;
-  transition: 0.5s;
   overflow: hidden;
 }
 .body__inner {
@@ -159,7 +158,7 @@ html {
 }
 
 .paragraph {
-  margin-left: 1em;
+  padding-left: 1em;
   opacity: 0;
   transition: 0.8s;
 }
@@ -176,10 +175,9 @@ html {
   width: -moz-fit-content;
   width: fit-content;
   padding-top: 8rem;
-  padding-bottom: 10rem;
+  padding-bottom: 7rem;
   line-height: 2;
   transition: 0.5s;
-  overflow: hidden;
 }
 .paragraph__wrapper--line {
   position: relative;
