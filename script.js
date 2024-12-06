@@ -6,6 +6,9 @@ $(document).ready(function () {
     let paragraph = [];
     let count = 0;
     let totalWidth = 0;
+    let keyCount = 0;
+    let wrapperCount = 1;
+    let lastChildCount = 0;
 
 
 
@@ -20,8 +23,9 @@ $(document).ready(function () {
         var totalWidth = 0;
         var $newDiv = $('<div class="paragraph__wrapper">');
         var count = 0; // カウント用の変数を初期化
-        var $lastP = $('div').find('p:last');
 
+
+        //パラグラフ---------------------------
         $('p.paragraph').each(function () {
             var $this = $(this);
             var thisWidth = $this.outerWidth(true); // 外側のマージンも含めた幅を取得
@@ -40,6 +44,9 @@ $(document).ready(function () {
             $newDiv.append($this);
             // 合計幅に加算
             totalWidth += thisWidth;
+
+            $(".paragraph__wrapper p:last").addClass('last-child');
+
         });
 
         // 最後のdiv要素をbodyに追加（最後のpタグが追加されていない場合）
@@ -47,17 +54,52 @@ $(document).ready(function () {
             $('body').append($newDiv);
         }
 
-        // カウントしたいクラス名
-        var targetClass = "paragraph__wrapper";
+        const elements = $(".paragraph__wrapper");
 
-        // クラス名が"myClass"のdiv要素の数をカウント
-        var divCount = $("." + targetClass).length;
+        // 配列の要素数を確認
+        console.log("paragraph__wrapperの数は" + elements.length);
 
-        console.log(targetClass + "を持つdiv要素の数:", divCount);
+        // elements.each(function () {
+        //     let count = 0;
+        //     // console.log(count);
+        // });
+
+
+        document.addEventListener('keydown', (event) => {
+            // 左矢印キーが押された場合
+            if (event.key === 'ArrowLeft') {
+                // クラス名last-childの要素を取得
+                const lastChild = $('.last-child');
+
+                // lastChildのopacityが1の場合、targetDivのopacityを0にする
+                if (lastChild[lastChildCount].style.opacity === '1') {
+                    console.log(lastChild[lastChildCount]);
+                    keyCount++;
+
+                    if (keyCount === 2) {
+                        // 2回押されたら処理を実行
+                        console.log('左矢印キーが2回押されました');
+                        // ここに実行したい処理を記述
+                        // 例:
+                        wrapperCount++;
+
+                        $(".paragraph__wrapper").each(function (index) {
+                            $(this).css("opacity", "0");
+                        });
+
+                        $(elements[wrapperCount]).css({
+                            // ここに変更したいCSSプロパティを記述する
+                            opacity: '1',
+                        });
+                    }
+
+                }
+
+            }
+        });
 
 
     });
-
 
     $(document).keydown(function (e) {
 
@@ -70,6 +112,7 @@ $(document).ready(function () {
                 paragraph[count].css({
                     opacity: '1',
                 });
+
 
             };
 
@@ -594,8 +637,12 @@ $(document).ready(function () {
 
     });
 
+
+    // 対象のdiv要素を取得（id属性で指定）
+    // キーボードイベントリスナーを追加
 }
 );
+
 
 // $(document).ready(function () {
 //     // フェードアウトさせたい要素のセレクタをここに指定します
