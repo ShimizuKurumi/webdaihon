@@ -23,9 +23,9 @@ html {
     letter-spacing: 0.07em;
     overflow: hidden;
 
-    &__inner {
-        overflow: hidden;
-    }
+    // &__inner {
+    //     overflow: hidden;
+    // }
 }
 
 //オープニング
@@ -89,16 +89,6 @@ html {
     }
 }
 
-.bar {
-    background-color: $color-bg;
-    width: 3%;
-    height: 100vh;
-    position: fixed;
-    right: 0;
-    top: 0%;
-    z-index: 1;
-    transition: .5s ease;
-}
 
 .help {
     position: fixed;
@@ -126,7 +116,7 @@ html {
 }
 
 .paragraph {
-    padding-left: 1em;
+    padding-left: 0.5em;
 
     &--29 {
         margin-right: 2em;
@@ -134,16 +124,17 @@ html {
 
     &__wrapper {
         position: fixed;
-        right: 10%;
+        right: 8%;
         top: 0;
-        height: 100%;
         -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
         width: fit-content;
-        padding-top: 8rem;
-        padding-bottom: 7rem;
+        padding-top: 15%;
+        padding-bottom: 15%;
         line-height: 2;
         transition: .5s;
+        margin-left: auto;
+        margin-right: auto;
 
         &--line {
             position: relative;
