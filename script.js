@@ -76,6 +76,7 @@ $(document).ready(function () {
                     console.log(lastChild[lastChildCount]);
                     keyCount++;
 
+
                     if (keyCount === 2) {
                         // 2回押されたら処理を実行
                         console.log('左矢印キーが2回押されました');
@@ -87,10 +88,16 @@ $(document).ready(function () {
                             $(this).css("opacity", "0");
                         });
 
+
                         $(elements[wrapperCount]).css({
                             // ここに変更したいCSSプロパティを記述する
                             opacity: '1',
                         });
+                    }
+                    if (keyCount === 3) {
+                        keyCount = 0;
+                        console.log('左矢印キーが3回押されました');
+                        lastChildCount++;
                     }
 
                 }
