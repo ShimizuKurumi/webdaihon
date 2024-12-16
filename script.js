@@ -7,13 +7,15 @@ function start() {
     let count = 0;
     let totalWidth = 0;
     let keyCount = 0;
-    let wrapperCount = 1;
+    let wrapperCount = [];
+    let pCount = -1;
     let lastChildCount = 0;
     let firstChildCount = 1;
     let $newDiv = $('<div class="paragraph__wrapper">');
     const twoLastParagraph = document.querySelector(".paragraph--27");
     const lastParagraph = document.querySelector(".paragraph--28");
     const currentWrapper = $('.currentWrapper');
+    let timeoutId;
 
 
 
@@ -31,6 +33,7 @@ function start() {
 
         var $this = $(this);
         var thisWidth = $this.outerWidth(true); // 外側のマージンも含めた幅を取得
+        pCount++;
 
         // 合計幅が400pxを超える場合
         if (totalWidth + thisWidth > $(window).width() * 0.85) {
@@ -39,8 +42,13 @@ function start() {
             // 合計幅をリセット
             totalWidth = 0;
             $newDiv = $('<div class="paragraph__wrapper">');
+            wrapperCount[count] = pCount;
+            pCount = 0;
+            console.log(wrapperCount);
             count++;
+
         }
+
 
         // pタグを新しいdiv要素に追加
         $newDiv.append($this);
@@ -55,6 +63,9 @@ function start() {
     // 最後のdiv要素をbodyに追加（最後のpタグが追加されていない場合）
     if ($newDiv.children().length > 0) {
         $('body').append($newDiv);
+        pCount++;
+        wrapperCount[count] = pCount;
+        console.log(wrapperCount);
     }
 
     const elements = $(".paragraph__wrapper");
@@ -83,11 +94,12 @@ function start() {
         }
     });
 
+
+
     $(document).on("keydown touchstart", (event) => {
         const screenWidth = $(window).width();
         let touchX = screenWidth;
         // console.log(event.key, touchX);
-
 
         //両方
         if (event.key === 'ArrowLeft') {
@@ -103,7 +115,6 @@ function start() {
         if (event.key === 'ArrowLeft' || touchX < screenWidth / 2) {
             // クラス名last-childの要素を取得
             console.log("左");
-            console.log(lastChildCount);
 
 
             // lastChildのopacityが1の場合、targetDivのopacityを0にする
@@ -149,7 +160,6 @@ function start() {
 
                 $(".currentWrapper").prev().prev().removeClass("prev-Wrapper");
 
-                // $(".prev-Wrapper p").css({ 'opacity': '0' });
             }
 
 
@@ -312,11 +322,14 @@ function start() {
         //右矢印が押された場合 またはタッチ
         if (event.key === 'ArrowRight' || touchX >= screenWidth / 2) {
             console.log("右");
-            console.log(lastChildCount);//ここ
+
 
             let $firstP = $(".currentWrapper").find("p:first");
             let $otherPs = $(".currentWrapper").find("p:not(:first)");
+            let $lastP = $(".currentWrapper").find("p:last");
             console.log($firstP);//ここ
+
+            let secondP = $(".currentWrapper").find("p:eq(1)");
 
             if (lastChildCount > 0) {
 
@@ -345,6 +358,7 @@ function start() {
                     $(".currentWrapper p").css({ 'opacity': '1' });
 
                     $(".prev-Wrapper").css({ 'opacity': '1' });
+                    $(".prev-Wrapper p").css({ 'opacity': '1' });
 
                     $(currentWrapper).removeClass("prev-Wrapper");
                     $(currentWrapper).prev().addClass("prev-Wrapper");
@@ -353,6 +367,8 @@ function start() {
                     lastNextWrapper.removeClass('next-Wrapper');
 
                     lastChildCount--;
+
+
                 };
             }
 
@@ -369,7 +385,6 @@ function start() {
                 });
 
             };
-
 
 
             if (count < 4) {
