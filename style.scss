@@ -212,6 +212,78 @@ html {
     }
 }
 
+.bgImg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover;
+    opacity: 0;
+    // animation: tika 1s step-end infinite;
+
+}
+
+.bgRed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 1;
+    background-color: rgb(205, 41, 41);
+    mix-blend-mode: difference;
+    opacity: 0;
+    // animation: redanime 1s  ease 11.5s forwards;
+
+}
+
+@keyframes tika {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes redanime {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .help {
     position: fixed;
@@ -555,6 +627,7 @@ html {
         opacity: 1;
     }
 }
+
 
 @media screen and (max-height: 500px) and (orientation: landscape) {
     html {

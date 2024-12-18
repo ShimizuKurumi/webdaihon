@@ -220,7 +220,9 @@ function start() {
       } else if (count === 18) {
         $("#clock")[0].play();
       } else if (count === 24) {
-        $(".fire").css({ opacity: "0.5" });
+        $(".bgImg").css({ opacity: "1", animation: "tika 1s step-end infinite" });
+        $(".bgRed").css({ animation: "redanime 1s  ease 11.5s forwards" });
+
         $("#bgm")[0].play();
         $(".frame").css({ animation: "framerotate 1.5s ease  11.5s infinite" });
       }
