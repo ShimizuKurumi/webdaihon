@@ -221,7 +221,7 @@ html {
     z-index: 0;
     object-fit: cover;
     opacity: 0;
-    // animation: tika 1s step-end infinite;
+    // animation: redanime 1s ease forwards;
 
 }
 
@@ -244,23 +244,20 @@ html {
         opacity: 0;
     }
 
+
     20% {
-        opacity: 0;
-    }
-
-    25% {
         opacity: 1;
     }
 
-    30% {
+    23% {
         opacity: 0;
     }
 
-    40% {
+    28% {
         opacity: 1;
     }
 
-    45% {
+    31% {
         opacity: 0;
     }
 

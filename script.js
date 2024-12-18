@@ -220,7 +220,7 @@ function start() {
       } else if (count === 18) {
         $("#clock")[0].play();
       } else if (count === 24) {
-        $(".bgImg").css({ opacity: "1", animation: "tika 1s step-end infinite" });
+        $(".bgImg").css({ animation: "tika 2s step-end forwards" });
         $(".bgRed").css({ animation: "redanime 1s  ease 11.5s forwards" });
 
         $("#bgm")[0].play();
@@ -388,8 +388,10 @@ function start() {
       } else if (count < 24) {
         $("#bgm")[0].pause();
         $("#bgm")[0].currentTime = 0;
+        $(".bgImg").css({ opacity: "0", animation: "none" });
+        $(".bgRed").css({ opacity: "0", animation: "none" });
+
         $(".frame").css({ animation: "none" });
-        $(".fire").css({ opacity: "0" });
       }
     }
   });
