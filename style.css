@@ -262,22 +262,22 @@ html {
     opacity: 0;
   }
   20% {
-    opacity: 1;
+    opacity: 0.5;
   }
   23% {
     opacity: 0;
   }
   28% {
-    opacity: 1;
+    opacity: 0.5;
   }
   31% {
     opacity: 0;
   }
   55% {
-    opacity: 1;
+    opacity: 0.5;
   }
   100% {
-    opacity: 1;
+    opacity: 0.5;
   }
 }
 
@@ -286,22 +286,22 @@ html {
     opacity: 0;
   }
   20% {
-    opacity: 1;
+    opacity: 0.5;
   }
   23% {
     opacity: 0;
   }
   28% {
-    opacity: 1;
+    opacity: 0.5;
   }
   31% {
     opacity: 0;
   }
   55% {
-    opacity: 1;
+    opacity: 0.5;
   }
   100% {
-    opacity: 1;
+    opacity: 0.5;
   }
 }
 @-webkit-keyframes redanime {
