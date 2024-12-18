@@ -492,20 +492,20 @@ html {
 
     // /* 480pxまでの幅の場合に適応される */
 
-    .help {
-        width: 80%;
+    // .help {
+    //     width: 80%;
 
-        &__left,
-        &__right {
-            display: flex;
-            align-items: center;
-        }
+    //     &__left,
+    //     &__right {
+    //         display: flex;
+    //         align-items: center;
+    //     }
 
-        &__right {
-            flex-direction: row-reverse;
-        }
+    //     &__right {
+    //         flex-direction: row-reverse;
+    //     }
 
-    }
+    // }
 }
 
 @keyframes tikatika {

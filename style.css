@@ -464,18 +464,6 @@ html {
   z-index: -1;
 }
 
-@media screen and (max-width: 480px) {
-  .help {
-    width: 80%;
-  }
-  .help__left, .help__right {
-    display: flex;
-    align-items: center;
-  }
-  .help__right {
-    flex-direction: row-reverse;
-  }
-}
 @-webkit-keyframes tikatika {
   0% {
     background-color: #F9EFE1;
@@ -490,6 +478,7 @@ html {
     background-color: #0B1632;
   }
 }
+
 @keyframes tikatika {
   0% {
     background-color: #F9EFE1;
