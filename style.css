@@ -359,9 +359,9 @@ html {
 }
 
 .frame-img {
-  max-width: 100px;
+  max-width: 90px;
   aspect-ratio: 1/1;
-  width: 40vw;
+  width: 30vw;
 }
 .frame-img .cls-1 {
   fill: #0B1632;
@@ -464,6 +464,18 @@ html {
   z-index: -1;
 }
 
+@media screen and (max-width: 480px) {
+  .help {
+    width: 80%;
+  }
+  .help__left, .help__right {
+    display: flex;
+    align-items: center;
+  }
+  .help__right {
+    flex-direction: row-reverse;
+  }
+}
 @-webkit-keyframes tikatika {
   0% {
     background-color: #F9EFE1;
@@ -478,7 +490,6 @@ html {
     background-color: #0B1632;
   }
 }
-
 @keyframes tikatika {
   0% {
     background-color: #F9EFE1;

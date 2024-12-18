@@ -380,9 +380,9 @@ html {
 }
 
 .frame-img {
-    max-width: 100px;
+    max-width: 90px;
     aspect-ratio: 1/1;
-    width: 40vw;
+    width: 30vw;
 
     .cls-1 {
         fill: $color-text;
@@ -491,19 +491,21 @@ html {
 @media screen and (max-width: 480px) {
 
     // /* 480pxまでの幅の場合に適応される */
-    // .frame {
 
-    //     &--top,
-    //     &--bottom {
-    //         width: 90%;
-    //     }
-    // }
+    .help {
+        width: 80%;
 
-    // .line {
-    //     &__wrapper {
-    //         width: 92%;
-    //     }
-    // }
+        &__left,
+        &__right {
+            display: flex;
+            align-items: center;
+        }
+
+        &__right {
+            flex-direction: row-reverse;
+        }
+
+    }
 }
 
 @keyframes tikatika {
