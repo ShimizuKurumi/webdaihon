@@ -64,7 +64,7 @@ function start() {
       // クラス名last-childの要素を取得
       console.log("左", count, pCount, currentWrapper);
 
-      if (0 <= count && count < 27) {
+      if (0 <= count && count < 28) {
         count++;
         pCount++;
         //PC処理
@@ -229,7 +229,7 @@ function start() {
     if (event.key === "ArrowRight" || touchX >= screenWidth / 2) {
       console.log("右", count, pCount, currentWrapper);
 
-      if (0 < count && count <= 27) {
+      if (0 < count && count <= 28) {
         count--;
         pCount--;
 
