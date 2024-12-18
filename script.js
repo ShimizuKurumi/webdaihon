@@ -15,7 +15,7 @@ function start() {
     pCount++;
 
     // 合計幅が400pxを超える場合
-    if (totalWidth + thisWidth > $(window).width() * 0.85) {
+    if (totalWidth + thisWidth > $(window).width() * 0.8) {
       // 新しいdiv要素をbodyに追加
       $("body").append($newDiv);
       // 合計幅をリセット
@@ -83,6 +83,7 @@ function start() {
 
         $(elements[currentWrapper]).css("opacity", "1");
       }
+
 
       if (count === 4) {
         $(".bg-eye--1").css({
@@ -402,11 +403,10 @@ $(document).ready(function () {
     $("#water")[0].play();
     $(".opening").css({ animation: "btn 1s ease forwards" });
     $(".opening__bg").css({ animation: "btn 1s ease forwards" });
-    // $(".frame-img .cls-1").css({ 'fill': '#0B1632', });
-    // $(".line--top").css({ 'background-color': '#0B1632', });
-    // $(".line--bottom").css({ 'background-color': '#0B1632', });
-    // $(".line--left").css({ 'background-color': '#0B1632', });
-    // $(".line--right").css({ 'background-color': '#0B1632', });
+
+    // setTimeout(function () {
+    //   $("#footstep")[0].play();
+    // }, 500);
   });
 });
 
