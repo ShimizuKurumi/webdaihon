@@ -19,7 +19,7 @@ html {
   width: 100vw;
   height: 100vh;
   max-width: 100%;
-  font-size: clamp(13px, 2.5vw, 1.2rem);
+  font-size: clamp(14px, 2.5vw, 1.2rem);
   font-family: "Zen Old Mincho", serif;
   letter-spacing: 0.07em;
   overflow-x: hidden;
