@@ -85,7 +85,11 @@ function start() {
       }
 
 
-      if (count === 4) {
+      if (count === 2) {
+        // $(".body").css({
+        //   background: "url(./images/opening4.jpg) no-repeat center/cover",
+        // });
+      } else if (count === 4) {
         $(".bg-eye--1").css({
           opacity: "0",
         });
@@ -407,7 +411,6 @@ $(document).ready(function () {
     $("#water")[0].play();
     $(".opening").css({ animation: "btn 1s ease forwards" });
     $(".opening__bg").css({ animation: "btn 1s ease forwards" });
-
     // setTimeout(function () {
     //   $("#footstep")[0].play();
     // }, 500);
@@ -545,4 +548,20 @@ $(window).on("load resize", function () {
     }
     prewidth = nowWidth; //初期幅と変化後が同じになった（変化が止まる）
   }, 200); //止まる判定までのミリ秒
+});
+
+$(function () {
+  $('.border-line--dream').hover(
+    function () {
+
+      //マウスカーソルが重なった時の処理
+      $(".body").css({ "background": "url(./images/opening4.jpg) no-repert center/cover" });
+
+    },
+    function () {
+
+      //マウスカーソルが離れた時の処理
+
+    }
+  );
 });

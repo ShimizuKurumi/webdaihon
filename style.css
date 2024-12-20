@@ -224,13 +224,14 @@ html {
   }
 }
 .border-line {
-  text-decoration: underline 1px #F9EFE1;
-  -webkit-text-decoration: underline 1px #F9EFE1;
+  text-decoration: underline 1px #0B1632;
+  -webkit-text-decoration: underline 1px #0B1632;
   cursor: pointer;
-  transition: 0.5s ease;
+  display: block;
 }
-.border-line.hover-image {
-  transition: 0.5s ease;
+.border-line--dream:hover {
+  -webkit-text-decoration: underline 1px red;
+          text-decoration: underline 1px red;
 }
 
 .bgImg {
@@ -370,7 +371,7 @@ html {
 }
 .paragraph {
   padding-left: 0.5em;
-  display: inline-flex;
+  display: -webkit-box;
   opacity: 0;
   transition: 0.5s;
 }

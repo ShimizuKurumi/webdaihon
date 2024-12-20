@@ -202,13 +202,13 @@ html {
 
 
 .border-line {
-    text-decoration: underline 1px $color-bg;
-    -webkit-text-decoration: underline 1px $color-bg;
+    text-decoration: underline 1px $color-text;
+    -webkit-text-decoration: underline 1px $color-text;
     cursor: pointer;
-    transition: .5s ease;
+    display: block;
 
-    &.hover-image {
-        transition: .5s ease;
+    &--dream:hover {
+        text-decoration: underline 1px red;
     }
 }
 
@@ -338,7 +338,7 @@ html {
 
 .paragraph {
     padding-left: 0.5em;
-    display: inline-flex;
+    display: -webkit-box;
 
     &__name {
         margin-bottom: 1.5em;
