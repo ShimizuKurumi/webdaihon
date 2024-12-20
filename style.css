@@ -273,6 +273,11 @@ html {
   31% {
     opacity: 0;
   }
+  40% {
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    opacity: 0;
+  }
   55% {
     opacity: 0.5;
   }
@@ -295,6 +300,11 @@ html {
     opacity: 0.5;
   }
   31% {
+    opacity: 0;
+  }
+  40% {
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
     opacity: 0;
   }
   55% {
@@ -360,8 +370,14 @@ html {
 }
 .paragraph {
   padding-left: 0.5em;
+  display: inline-flex;
   opacity: 0;
   transition: 0.5s;
+}
+.paragraph__name {
+  margin-bottom: 1.5em;
+  width: 100%;
+  display: block;
 }
 .paragraph--29 {
   margin-right: 2em;

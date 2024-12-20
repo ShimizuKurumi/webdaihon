@@ -261,6 +261,11 @@ html {
         opacity: 0;
     }
 
+    40% {
+        animation-timing-function: ease;
+        opacity: 0;
+    }
+
     55% {
         opacity: 0.5;
     }
@@ -333,6 +338,13 @@ html {
 
 .paragraph {
     padding-left: 0.5em;
+    display: inline-flex;
+
+    &__name {
+        margin-bottom: 1.5em;
+        width: 100%;
+        display: block;
+    }
 
     &--29 {
         margin-right: 2em;
