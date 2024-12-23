@@ -64,7 +64,7 @@ function start() {
       // クラス名last-childの要素を取得
       console.log("左", count, pCount, currentWrapper);
 
-      if (0 <= count && count < 28) {
+      if (0 <= count && count < 37) {
         count++;
         pCount++;
         //PC処理
@@ -85,10 +85,37 @@ function start() {
       }
 
 
-      if (count === 2) {
-        // $(".body").css({
-        //   background: "url(./images/opening4.jpg) no-repeat center/cover",
-        // });
+      if (count === 1) {
+        $(".body").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".paragraph__wrapper").css({
+          color: "#0B1632",
+        });
+        $(".help__text").css({
+          color: "#0B1632",
+        });
+        $(".st00").css({
+          fill: "#0B1632",
+        });
+        $(".line--top").css({
+          "background-color": "#0B1632",
+        });
+        $(".line--bottom").css({
+          "background-color": "#0B1632",
+        });
+        $(".line--right").css({
+          "background-color": "#0B1632",
+        });
+        $(".line--left").css({
+          "background-color": "#0B1632",
+        });
+        $(".cls-1").css({
+          fill: "#0B1632",
+        });
+        $(".st0").css({
+          fill: "#0B1632",
+        });
       } else if (count === 4) {
         $(".bg-eye--1").css({
           opacity: "0",
@@ -229,13 +256,17 @@ function start() {
 
         $("#bgm")[0].play();
         $(".frame").css({ animation: "framerotate 1.5s ease  11.5s infinite" });
+      } else if (count === 28) {
+        $(".bgRed").css({ backgroundColor: "#333" });
+      } else if (count === 34) {
+        $("#pen")[0].play();
       }
     }
     //右矢印が押された場合 またはタッチ
     if (event.key === "ArrowRight" || touchX >= screenWidth / 2) {
       console.log("右", count, pCount, currentWrapper);
 
-      if (0 < count && count <= 28) {
+      if (0 < count && count <= 37) {
         count--;
         pCount--;
 
@@ -255,7 +286,42 @@ function start() {
         $(elements[currentWrapper]).css("opacity", "1");
       }
 
-      if (count < 4) {
+      if (count < 1) {
+        $(".body").css({
+          "background-color": "#0B1632",
+        });
+        $(".paragraph__wrapper").css({
+          color: "#F9EFE1",
+        });
+        $(".help__text").css({
+          color: "#F9EFE1",
+        });
+        $(".st00").css({
+          fill: "#F9EFE1",
+        });
+        $(".line--top").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".line--bottom").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".line--right").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".line--left").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".cls-1").css({
+          fill: "#F9EFE1",
+        });
+        $(".bg-eye").css({
+          fill: "#F9EFE1",
+        });
+        $(".st0").css({
+          fill: "#F9EFE1",
+        });
+
+      } else if (count < 4) {
         $(".bg-eye--1").css({
           opacity: "0.1",
         });
@@ -396,6 +462,10 @@ function start() {
         $(".bgRed").css({ opacity: "0", animation: "none" });
 
         $(".frame").css({ animation: "none" });
+      } else if (count < 28) {
+        $(".bgRed").css({ backgroundColor: "rgb(205, 41, 41)" });
+      } else if (count === 34) {
+        $("#pen")[0].play();
       }
     }
   });
@@ -405,17 +475,165 @@ function start() {
   }
 }
 
-$(document).ready(function () {
-  $(".opening__button").click(function () {
+function start2() {
+  let paragraph = [];
+  let totalWidth = 0;
+  let wrapperCount = [];
+  let currentWrapper = 0;
+  let count = 0;
+  let pCount = -1;
+  let $newDiv = $('<div class="paragraph__wrapper">');
+
+  //パラグラフ---------------------------
+  $("p.paragraph2").each(function (i, elem) {
+    paragraph[i] = $(elem);
+    let $this = $(this);
+    let thisWidth = $this.outerWidth(true); // 外側のマージンも含めた幅を取得
+    pCount++;
+
+    // 合計幅が400pxを超える場合
+    if (totalWidth + thisWidth > $(window).width() * 0.8) {
+      // 新しいdiv要素をbodyに追加
+      $("body").append($newDiv);
+      // 合計幅をリセット
+      totalWidth = 0;
+      $newDiv = $('<div class="paragraph__wrapper">');
+
+      //場面ごとのp要素の数を追加
+      wrapperCount.push(pCount);
+      pCount = 0;
+    }
+
+    // pタグを新しいdiv要素に追加
+    $newDiv.append($this);
+    // 合計幅に加算
+    totalWidth += thisWidth;
+  });
+
+  // 最後のdiv要素をbodyに追加（最後のpタグが追加されていない場合）
+  if ($newDiv.children().length > 0) {
+    $("body").append($newDiv);
+    pCount++;
+    wrapperCount.push(pCount);
+    console.log(wrapperCount);
+  }
+
+  const elements = $(".paragraph__wrapper");
+  pCount = 0;
+
+  $(document).on("keydown touchstart", (event) => {
+    const screenWidth = $(window).width();
+    let touchX = screenWidth;
+    // console.log(event.key, touchX);
+
+    //両方
+    if (event.key === "ArrowLeft") {
+      touchX = 0;
+    } else if (event.key === "ArrowRight") {
+      touchX = screenWidth;
+    } else {
+      touchX = event.originalEvent.touches[0].clientX;
+    }
+    //ここまで両方
+
+    // 左矢印キーが押された場合 またはタッチ
+    if (event.key === "ArrowLeft" || touchX < screenWidth / 2) {
+      // クラス名last-childの要素を取得
+      console.log("左", count, pCount, currentWrapper);
+
+      if (0 <= count && count < 37) {
+        count++;
+        pCount++;
+        //PC処理
+        paragraph[count].css({
+          opacity: "1",
+        });
+      }
+
+      if (pCount >= wrapperCount[currentWrapper] && currentWrapper < wrapperCount.length) {
+        pCount = 0;
+        currentWrapper++;
+
+        elements.each(function (index) {
+          $(this).css("opacity", "0");
+        });
+
+        $(elements[currentWrapper]).css("opacity", "1");
+      }
+
+
+      if (count === 1) {
+        $("#door")[0].play();
+      } else if (count === 2) {
+        $('.bg-eye--1').css({ opacity: "0" });
+        $('.bg-eye--2').css({ opacity: "0.3" });
+        $('.bg-eye .cls-1').css({ fill: "#F9EFE1" });
+      } else if (count === 4) {
+        $('.blue-circle').css({ opacity: "1" });
+        $('.bg-eye--1').css({ opacity: "0.3" });
+        $('.bg-eye--2').css({ opacity: "0" });
+
+      }
+    }
+    //右矢印が押された場合 またはタッチ
+    if (event.key === "ArrowRight" || touchX >= screenWidth / 2) {
+      console.log("右", count, pCount, currentWrapper);
+
+      if (0 < count && count <= 37) {
+        count--;
+        pCount--;
+
+        paragraph[count + 1].css({
+          opacity: "0",
+        });
+      }
+
+      if (pCount <= -1 && currentWrapper > 0) {
+        currentWrapper--;
+        pCount = wrapperCount[currentWrapper] - 1;
+
+        elements.each(function (index) {
+          $(this).css("opacity", "0");
+        });
+
+        $(elements[currentWrapper]).css("opacity", "1");
+      }
+
+      if (count < 1) {
+
+      }
+    }
+  });
+
+  if ($(".single-p").hasClass("first-child last-child")) {
+    $(".single-p").removeClass("last-child");
+  }
+}
+
+function clickBtn() {
+  $(".opening__button--main").click(function () {
     start();
     $("#water")[0].play();
     $(".opening").css({ animation: "btn 1s ease forwards" });
     $(".opening__bg").css({ animation: "btn 1s ease forwards" });
-    // setTimeout(function () {
-    //   $("#footstep")[0].play();
-    // }, 500);
+    $(".frame").css({
+      "opacity": "1",
+    });
   });
-});
+}
+
+function clickBtn2() {
+  $(".opening__button--main").click(function () {
+    start2();
+    $("#water")[0].play();
+    $(".opening").css({ animation: "btn 1s ease forwards" });
+    $(".opening__bg").css({ animation: "btn 1s ease forwards" });
+    $(".frame").css({
+      "opacity": "1",
+    });
+  });
+}
+
 
 // $(document).ready(function () {
 //     // フェードアウトさせたい要素のセレクタをここに指定します
@@ -550,18 +768,48 @@ $(window).on("load resize", function () {
   }, 200); //止まる判定までのミリ秒
 });
 
-$(function () {
-  $('.border-line--dream').hover(
-    function () {
 
-      //マウスカーソルが重なった時の処理
-      $(".body").css({ "background": "url(./images/opening4.jpg) no-repert center/cover" });
+//時間
+function changeContent() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
 
-    },
-    function () {
 
-      //マウスカーソルが離れた時の処理
+  if (hours === 2 && minutes >= 0 && minutes <= 30) {
+    $(".paragraph__all--2").css({ display: "none" });
+    // $(".secret").css({ display: "block" });
+    clickBtn();
 
-    }
-  );
-});
+  } else {
+    // $(".secret").css({ display: "none" });
+    clickBtn2();
+    $(".paragraph__all--2").css({ display: "block" });
+  }
+}
+
+// ページ読み込み時に一度実行し、その後一定間隔で実行
+changeContent();
+setInterval(changeContent, 60000); // 1分ごとに更新
+
+
+
+//半角から全角
+function toZenkakuNumber(str) {
+  // 半角数字の正規表現
+  const hankakuNumberRegex = /[0-9]/g;
+
+  // 半角数字を全角数字に変換
+  return str.replace(hankakuNumberRegex, (match) => {
+    return String.fromCharCode(match.charCodeAt(0) + 0xFEE0);
+  });
+}
+
+// 変換したいspan要素のidを指定
+const targetSpan = document.querySelector('.count-span');
+
+// span要素のテキストを取得し、全角に変換
+const newText = toZenkakuNumber(targetSpan.textContent);
+
+// 変換後のテキストをspan要素に設定
+targetSpan.textContent = newText;

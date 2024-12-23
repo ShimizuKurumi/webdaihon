@@ -1,3 +1,48 @@
+<?php
+
+// カウント数が記録されているファイルのパス
+$file_path = 'count.dat';
+
+// クッキーの名前
+$cookie_name = 'page_viewed';
+// クッキーの有効期限（秒）
+$cookie_duration = 3600; // = 1時間
+
+// カウントを保存するファイルが存在しない場合は作成
+if (!file_exists($file_path)) {
+    file_put_contents($file_path, '0');
+}
+
+// ファイルを排他ロックで開く
+$fp = fopen($file_path, 'r+b');
+
+// ファイルのロックに成功した場合のみ処理を続行
+if ($fp !== false) {
+    // ロックを取得
+    if (flock($fp, LOCK_EX)) {
+        // ファイルからカウント数を取得
+        $count = (int)fgets($fp);
+
+        // クッキーが設定されていない場合のみカウントを増やす
+        if (!isset($_COOKIE[$cookie_name])) {
+            // カウントをインクリメント
+            $count++;
+            rewind($fp);
+            fwrite($fp, (string)$count);
+            // クッキーを設定
+            setcookie($cookie_name, '1', time() + $cookie_duration);
+        }
+        // ロックを解放
+        flock($fp, LOCK_UN);
+    }
+    // ファイルを閉じる
+    fclose($fp);
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -21,7 +66,7 @@
                 <h1><img src="./images/logo.png" alt="" class="opening__img"></h1>
                 <h2 class="opening__title">WEB台本</h2>
                 <p class="opening__text">音声をONにしてお楽しみください。</p>
-                <button class="opening__button">作品を読む</button>
+                <button class="opening__button opening__button--main">作品を読む</button>
             </div>
             <div class="opening__credit opening__credit--mobile">
                 <p class="opening__credit-text">協力</p>
@@ -48,7 +93,7 @@
                     <defs>
                         <style>
                             .st00 {
-                                fill: #0b1632;
+                                fill: #F9EFE1;
                             }
                         </style>
                     </defs>
@@ -67,7 +112,7 @@
                     <defs>
                         <style>
                             .st00 {
-                                fill: #0b1632;
+                                fill: #F9EFE1;
                             }
                         </style>
                     </defs>
@@ -262,6 +307,7 @@
             </div>
         </div>
 
+        <div class="blue-circle"></div>
 
         <div class="eye">
             <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385.52 232.61"
@@ -292,7 +338,10 @@
                     </g>
                 </g>
             </svg>
-            <?xml version="1.0" encoding="UTF-8"?>
+            <?php
+            // XML宣言をPHPで出力
+            echo '<?xml version="1.0" encoding="UTF-8"?>';
+            ?>
             <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 379.98 143.7"
                 class="bg-eye bg-eye--2">
                 <defs>
@@ -322,7 +371,7 @@
             </svg>
         </div>
 
-        <section class="paragraph__all">
+        <section class="paragraph__all paragraph__all--1">
             <p class="paragraph--1 paragraph"><span class="paragraph__name">男</span>ユディット！　ユディット！
             </p>
             <p class="paragraph--2 paragraph"><span class="paragraph__name">女</span>あら旦那様、もうお目覚めですか。昨晩は大分うなされていたようでしたわ。
@@ -386,36 +435,82 @@
             <p class="paragraph--28 paragraph"><span
                     class="paragraph__name">　</span>私はこうして目が見えないから、近くにおりますが、目空きはどんどんと去っていきました。どうせなら、もっと沢山の人間の眼玉をくり貫いておけば、今頃
                 大宴会でも出来たでしょうに。</p>
-            <p class="paragraph--29 paragraph">続く・・・</p>
+            <p class="paragraph--29 paragraph"><span class="paragraph__name">男</span>見ているのか、見ていないのか。それが問題だ。目玉がない奴なんぞ、そこら中に転がっておる。ほれ、椅子だ椅子を用意しろ。</p>
+            <p class="paragraph--30 paragraph"><span class="paragraph__name">女</span>何をしようと言うんですか。そんな台詞は台本にありませんよ。</p>
+            <p class="paragraph--31 paragraph"><span class="paragraph__name">男</span>椅子を用意しろと言っておる。宴会じゃよ。男が一人戦地に行くんだ。パーティーだ。酒を用意するんじゃ。</p>
+            <p class="paragraph--32 paragraph"><span class="paragraph__name">女</span>宴会？パーティー？また、この人は、何を言い出すのですか。</p>
+            <p class="paragraph--33 paragraph"><span class="paragraph__name">男</span><span class="span-group">目玉が<span class="count-span"><?php echo $count; ?></span>個。この邸にこれだけの客人が来るのは久方ぶりのことだからな。</span></p>
+            <p class="paragraph--34 paragraph"><span class="paragraph__name">女</span>椅子ですね。そんなに宴会がしたいんですか。</p>
+            <p class="paragraph--35 paragraph"><span class="paragraph__name">男</span>大宴会とはお前が言ったんだぞ。台本にも書いてある。</p>
+            <p class="paragraph--36 paragraph"><span class="paragraph__name">女</span>あ！今台本に無理矢理書き加えましたね。違法行為ですよ。</p>
+            <p class="paragraph--37 paragraph"><span class="paragraph__name">男</span>さ、ごちゃごちゃ言ってないで歌うんだ。ほら、もう一つ書き加えるぞ。</p>
+            <p class="paragraph--38 paragraph">続く・・・</p>
 
+        </section>
+
+
+        <section class="paragraph__all paragraph__all--2">
+            <p class="paragraph2--1 paragraph2"><span class="paragraph__name">男</span>すみません、すみません。　あれ？？　あ！
+            </p>
+            <p class="paragraph2--2 paragraph2">仮面をつけた男、鍵を開け入って来る。</p>
+            <p class="paragraph2--3 paragraph2"><span class="paragraph__name">男</span>あら、真っ暗だ。星が一つたりとも落ちていない。何も見えない聞こえない。闇バイトにはピッタリの真っ暗闇。あれ？誰かいませんか？おかしいな。何も見えないんじゃ劇を進めようがないじゃないか。ん？でも見えるからって劇が進むってのもオカシナ話だよな。盲目には盲目の明るい人生があるように、暗闇には暗闇の明るいワンシーンがあるだろう。</p>
+            <p class="paragraph2--4 paragraph2"><span class="paragraph__name">男</span>でも、こうも暗いと、缶詰めの中に閉じ込められたムシケラだ。「ある朝、私がなにか気がかりな夢から目を覚ますと、一匹の巨大なムシケラに変わっているのを発見した。」社会の何にも役に立たない私自身に閉じこもるしかないムシケラだ。仕方がないな。わたくしといふ現象は有機交流電燈のひとつの青い照明です。風景やみんなといつしよにせはしくせはしく明滅しながらいかにもたしかにともりつづける因果交流電燈のひとつの青い照明です。（と、懐中電灯をつける。）</p>
+            <p class="paragraph2--5 paragraph2"><span class="paragraph__name">男</span>でなんだ、沢山いるじゃないか。人が悪い。すぐに見えてないフリなんてするんだから、いるんだったら言ってくださいよ。そんなところでボケっと立って。なにか面白いことでも始まるんじゃないかって顔に書いてありますよ。ハハッ、そうだ。良いもの見せてあげます。ここはね、青髭公の剥製工場。たくさんの剥製が置いてありますからね。今日は青髭公がお出かけ中ですから特別ですよ。見たことあります？剥製って。ご紹介しますよ。</p>
+            <p class="paragraph2--6 paragraph2"><span class="paragraph__name">男</span>でさ、私の後についてきて。足元に気を付けて。ささささ、こっちこっち。</p>
+            <p class="paragraph2--7 paragraph2"><span class="paragraph__name">　</span>えー、記念すべき剥製コレクション第一号。そうよーく照らして、、、わかりますか？『意思』です。強く固い『意思』です。。。。ん？『石』！！『地球の石』！『地球の石』の剥製です。『月の石』なんてものがありましたが、そんなもんじゃない。1000万年以上前から、この地にいる『地球の石』。その剥製です。</p>
+            <p class="paragraph2--8 paragraph2"><span class="paragraph__name">男</span>あ、あれ？あれ？オカシイ。困ったな。ちょっと待ってください。しまった。瞼のシャッターが閉じちまったみたいで、えーっと、どうしたもんかな。本当に私は社会のお荷物。何の役にも立たない盲目のムシケラです。弱く小さな社会の弱者。アノ、誰か明かりを持ってませんか？もう、この先は皆さんに頼るしかない。緊急事態です。助け合いの精神ってヤツです。</p>
+
+
+
+        </section>
+
+
+        <!--
+    <div class="secret">
+        <div class="opening opening--secret">
+            <div class="opening__inner opening__inner--secret">
+                <h1><img src="./images/logo.png" alt="" class="opening__img"></h1>
+                <p class="opening__small-text">私が出かけている間、<br>決してこの鍵の部屋だけは開けてはならないよ。<br>そう、その一番小さな鍵の部屋だ。</p>
+                <button class="opening__button opening__button--secret">部屋を開ける</button>
+            </div>
+            <div class="opening__credit opening__credit--mobile">
+                <p class="opening__credit-text">協力</p>
+                <img src="./images/taigenlogo.png" alt="" class="opening__logo">
+            </div>
+        </div>
 
     </div>
+ -->
+        <!-- 動画 -->
+        <!-- <video src="./video/bganime.mp4" autoplay muted loop playsinline class="fire"></video> -->
 
-    </div>
+        <!-- //サウンド -->
+        <audio id="paper">
+            <source src="./audio/paper.mp3" type="audio/mpeg">
+        </audio>
 
-    <!-- 動画 -->
-    <!-- <video src="./video/bganime.mp4" autoplay muted loop playsinline class="fire"></video> -->
+        <audio id="clock">
+            <source src="./audio/clock.mp3" type="audio/mpeg">
+        </audio>
 
-    <!-- //サウンド -->
-    <audio id="paper">
-        <source src="./audio/paper.mp3" type="audio/mpeg">
-    </audio>
+        <audio id="bgm">
+            <source src="./audio/bgm.mp3" type="audio/mpeg">
+        </audio>
 
-    <audio id="clock">
-        <source src="./audio/clock.mp3" type="audio/mpeg">
-    </audio>
+        <audio id="water">
+            <source src="./audio/suiteki_one.mp3" type="audio/mpeg">
+        </audio>
 
-    <audio id="bgm">
-        <source src="./audio/bgm.mp3" type="audio/mpeg">
-    </audio>
+        <audio id="pen">
+            <source src="./audio/pen.mp3" type="audio/mpeg">
+        </audio>
 
-    <audio id="water">
-        <source src="./audio/suiteki_one.mp3" type="audio/mpeg">
-    </audio>
+        <audio id="door">
+            <source src="./audio/door.mp3" type="audio/mpeg">
+        </audio>
 
-
-    <script src="./jquery-3.7.1.min.js"></script>
-    <script src="./script.js"></script>
+        <script src="./jquery-3.7.1.min.js"></script>
+        <script src="./script.js"></script>
 </body>
 
 </html>
