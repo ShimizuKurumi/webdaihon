@@ -541,7 +541,7 @@ function start2() {
       // クラス名last-childの要素を取得
       console.log("左", count, pCount, currentWrapper);
 
-      if (0 <= count && count < 37) {
+      if (0 <= count && count < 13) {
         count++;
         pCount++;
         //PC処理
@@ -569,17 +569,37 @@ function start2() {
         $('.bg-eye--2').css({ opacity: "0.3" });
         $('.bg-eye .cls-1').css({ fill: "#F9EFE1" });
       } else if (count === 4) {
-        $('.blue-circle').css({ opacity: "1" });
+        $('.blue-circle').css({ opacity: "0.8" });
         $('.bg-eye--1').css({ opacity: "0.3" });
         $('.bg-eye--2').css({ opacity: "0" });
 
+      } else if (count === 5) {
+        $("#step")[0].play();
+      } else if (count === 7) {
+        $(".intro--rock").css({ opacity: "1" });
+      }
+      else if (count === 8) {
+        $(".intro--rock").css({ opacity: "0" });
+        $('.blue-circle').css({ opacity: "0" });
+        $('.bg-eye--1').css({ opacity: "0" });
+        $('.bg-eye--2').css({ opacity: "0.3" });
+      } else if (count === 9) {
+        $('.bg-eye--1').css({ opacity: "0.3" });
+        $('.bg-eye--2').css({ opacity: "0" });
+        $('.blue-circle').css({ opacity: "0.8", width: "30%" });
+      } else if (count === 10) {
+        $("#step")[0].play();
+      } else if (count === 11) {
+        $(".intro--book").css({ opacity: "1" });
+      } else if (count === 12) {
+        $(".intro--book").css({ opacity: "0" });
       }
     }
     //右矢印が押された場合 またはタッチ
     if (event.key === "ArrowRight" || touchX >= screenWidth / 2) {
       console.log("右", count, pCount, currentWrapper);
 
-      if (0 < count && count <= 37) {
+      if (0 < count && count <= 13) {
         count--;
         pCount--;
 
@@ -623,7 +643,7 @@ function clickBtn() {
 }
 
 function clickBtn2() {
-  $(".opening__button--main").click(function () {
+  $(".opening__button--secret").click(function () {
     start2();
     $("#water")[0].play();
     $(".opening").css({ animation: "btn 1s ease forwards" });
@@ -634,6 +654,11 @@ function clickBtn2() {
   });
 }
 
+// $(function () {
+//   $(".intro").click(function () {
+//     $(".intro").css({ opacity: "0" });
+//   });
+// });
 
 // $(document).ready(function () {
 //     // フェードアウトさせたい要素のセレクタをここに指定します
@@ -749,6 +774,8 @@ $(function () {
   vAnimate();
 });
 
+
+
 //リサイズしたらリロード
 var timer = false;
 var prewidth = $(window).width(); //初期幅設定
@@ -776,15 +803,18 @@ function changeContent() {
   const minutes = now.getMinutes();
 
 
-  if (hours === 2 && minutes >= 0 && minutes <= 30) {
-    $(".paragraph__all--2").css({ display: "none" });
-    // $(".secret").css({ display: "block" });
-    clickBtn();
-
-  } else {
-    // $(".secret").css({ display: "none" });
+  if (hours === 23 && minutes >= 0 && minutes <= 59) {
     clickBtn2();
+    $(".opening--main").css({ display: "none" });
+    $(".secret").css({ display: "block" });
     $(".paragraph__all--2").css({ display: "block" });
+    $(".paragraph__all--1").css({ display: "none" });
+  } else {
+    $(".paragraph__all--2").css({ display: "none" });
+    $(".paragraph__all--1").css({ display: "block" });
+    $(".secret").css({ display: "none" });
+    $(".opening").css({ display: "block" });
+    clickBtn();
   }
 }
 

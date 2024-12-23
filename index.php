@@ -61,7 +61,7 @@ if ($fp !== false) {
 
 <body class="body">
     <div class="body__inner">
-        <div class="opening">
+        <div class="opening opening--main">
             <div class="opening__inner">
                 <h1><img src="./images/logo.png" alt="" class="opening__img"></h1>
                 <h2 class="opening__title">WEB台本</h2>
@@ -309,6 +309,21 @@ if ($fp !== false) {
 
         <div class="blue-circle"></div>
 
+        <div class="intro intro--rock">
+            <div class="intro__inner">
+                <img src="./images/rock.png" alt="" class="intro__img">
+                <p class="intro__text">『地球の石』の剥製</p>
+            </div>
+        </div>
+
+
+        <div class="intro intro--book">
+            <div class="intro__inner">
+                <img src="./images/book.png" alt="" class="intro__img">
+                <p class="intro__text">『思考』の剥製</p>
+            </div>
+        </div>
+
         <div class="eye">
             <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385.52 232.61"
                 class="bg-eye bg-eye--1">
@@ -457,30 +472,34 @@ if ($fp !== false) {
             <p class="paragraph2--4 paragraph2"><span class="paragraph__name">男</span>でも、こうも暗いと、缶詰めの中に閉じ込められたムシケラだ。「ある朝、私がなにか気がかりな夢から目を覚ますと、一匹の巨大なムシケラに変わっているのを発見した。」社会の何にも役に立たない私自身に閉じこもるしかないムシケラだ。仕方がないな。わたくしといふ現象は有機交流電燈のひとつの青い照明です。風景やみんなといつしよにせはしくせはしく明滅しながらいかにもたしかにともりつづける因果交流電燈のひとつの青い照明です。（と、懐中電灯をつける。）</p>
             <p class="paragraph2--5 paragraph2"><span class="paragraph__name">男</span>でなんだ、沢山いるじゃないか。人が悪い。すぐに見えてないフリなんてするんだから、いるんだったら言ってくださいよ。そんなところでボケっと立って。なにか面白いことでも始まるんじゃないかって顔に書いてありますよ。ハハッ、そうだ。良いもの見せてあげます。ここはね、青髭公の剥製工場。たくさんの剥製が置いてありますからね。今日は青髭公がお出かけ中ですから特別ですよ。見たことあります？剥製って。ご紹介しますよ。</p>
             <p class="paragraph2--6 paragraph2"><span class="paragraph__name">男</span>でさ、私の後についてきて。足元に気を付けて。ささささ、こっちこっち。</p>
-            <p class="paragraph2--7 paragraph2"><span class="paragraph__name">　</span>えー、記念すべき剥製コレクション第一号。そうよーく照らして、、、わかりますか？『意思』です。強く固い『意思』です。。。。ん？『石』！！『地球の石』！『地球の石』の剥製です。『月の石』なんてものがありましたが、そんなもんじゃない。1000万年以上前から、この地にいる『地球の石』。その剥製です。</p>
-            <p class="paragraph2--8 paragraph2"><span class="paragraph__name">男</span>あ、あれ？あれ？オカシイ。困ったな。ちょっと待ってください。しまった。瞼のシャッターが閉じちまったみたいで、えーっと、どうしたもんかな。本当に私は社会のお荷物。何の役にも立たない盲目のムシケラです。弱く小さな社会の弱者。アノ、誰か明かりを持ってませんか？もう、この先は皆さんに頼るしかない。緊急事態です。助け合いの精神ってヤツです。</p>
-
-
+            <p class="paragraph2--7 paragraph2"><span class="paragraph__name">　</span>えー、記念すべき剥製コレクション第一号。そうよーく照らして・・・わかりますか？『意思』です。強く固い『意思』です。ん？『石』！！『地球の石』！『地球の石』の剥製です。『月の石』なんてものがありましたが、そんなもんじゃない。１０００万年以上前から、この地にいる『地球の石』。その剥製です。</p>
+            <p class="paragraph2--8 paragraph2"></p>
+            <p class="paragraph2--9 paragraph2"><span class="paragraph__name">男</span>あ、あれ？あれ？オカシイ。困ったな。ちょっと待ってください。しまった。瞼のシャッターが閉じちまったみたいで、えーっと、どうしたもんかな。本当に私は社会のお荷物。何の役にも立たない盲目のムシケラです。弱く小さな社会の弱者。アノ、誰か明かりを持ってませんか？もう、この先は皆さんに頼るしかない。緊急事態です。助け合いの精神ってヤツです。</p>
+            <p class="paragraph2--10 paragraph2"><span class="paragraph__name">男</span>あ！あるじゃないですか！それにしてもちっぽけな明かりですね。ま、人間一人一人の明るさなんてそんなもんです。それだけあれば必要十分。協力していきましょう。あ、そうそう『意思』の剥製でした。さ、次はこっち。そ、こっちこっち。集中して。ハイこちら、一緒に行きましょう。</p>
+            <p class="paragraph2--11 paragraph2"><span class="paragraph__name">男</span>こちらです。こちら。そうそうこちら、こちらこちらこちらこちら『こちら葛飾区亀有公園前派出所　第五巻』。見てください。初版ですよ。表紙にシミ・ヤケあり。作者は秋本治。感じますか？作者秋本の『思考』の剥製です。</p>
+            <p class="paragraph2--12 paragraph2"></p>
+            <p class="paragraph2--13 paragraph2"><span class="paragraph__name">男</span>人の思考なんてものも剥製に出来るんですね。どんどん行きますよ。慣れてきましたね。次の剥製は凄いですよ。人間の言葉をしゃべります。そのものの特徴を保持したまま保存できるのが剥製というやつなんですね。さっ、もっとよく手元が見えるように照らして。</p>
+            <p class="paragraph2--14 paragraph2">続く・・・</p>
 
         </section>
 
 
-        <!--
-    <div class="secret">
-        <div class="opening opening--secret">
-            <div class="opening__inner opening__inner--secret">
-                <h1><img src="./images/logo.png" alt="" class="opening__img"></h1>
-                <p class="opening__small-text">私が出かけている間、<br>決してこの鍵の部屋だけは開けてはならないよ。<br>そう、その一番小さな鍵の部屋だ。</p>
-                <button class="opening__button opening__button--secret">部屋を開ける</button>
+
+        <div class="secret">
+            <div class="opening opening--secret">
+                <div class="opening__inner opening__inner--secret">
+                    <h1><img src="./images/logo.png" alt="" class="opening__img"></h1>
+                    <p class="opening__small-text">私が出かけている間、<br>決してこの鍵の部屋だけは<br class="br--sp">開けてはならないよ。<br>そう、その一番小さな鍵の部屋だ。</p>
+                    <button class="opening__button opening__button--secret">部屋を開ける</button>
+                </div>
+                <div class="opening__credit opening__credit--mobile">
+                    <p class="opening__credit-text">協力</p>
+                    <img src="./images/taigenlogo.png" alt="" class="opening__logo">
+                </div>
             </div>
-            <div class="opening__credit opening__credit--mobile">
-                <p class="opening__credit-text">協力</p>
-                <img src="./images/taigenlogo.png" alt="" class="opening__logo">
-            </div>
+
         </div>
 
-    </div>
- -->
         <!-- 動画 -->
         <!-- <video src="./video/bganime.mp4" autoplay muted loop playsinline class="fire"></video> -->
 
@@ -507,6 +526,10 @@ if ($fp !== false) {
 
         <audio id="door">
             <source src="./audio/door.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="step">
+            <source src="./audio/step.mp3" type="audio/mpeg">
         </audio>
 
         <script src="./jquery-3.7.1.min.js"></script>
