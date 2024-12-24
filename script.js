@@ -565,9 +565,6 @@ function start2() {
       if (count === 1) {
         $("#door")[0].play();
       } else if (count === 2) {
-        $('.bg-eye--1').css({ opacity: "0" });
-        $('.bg-eye--2').css({ opacity: "0.3" });
-        $('.bg-eye .cls-1').css({ fill: "#F9EFE1" });
       } else if (count === 4) {
         $('.blue-circle').css({ opacity: "0.8" });
         $('.bg-eye--1').css({ opacity: "0.3" });
@@ -577,6 +574,7 @@ function start2() {
         $("#step")[0].play();
       } else if (count === 7) {
         $(".intro--rock").css({ opacity: "1" });
+        $("#clap")[0].play();
       }
       else if (count === 8) {
         $(".intro--rock").css({ opacity: "0" });
@@ -586,11 +584,12 @@ function start2() {
       } else if (count === 9) {
         $('.bg-eye--1').css({ opacity: "0.3" });
         $('.bg-eye--2').css({ opacity: "0" });
-        $('.blue-circle').css({ opacity: "0.8", width: "30%" });
+        $('.blue-circle').css({ opacity: "1", width: "40%" });
       } else if (count === 10) {
         $("#step")[0].play();
       } else if (count === 11) {
         $(".intro--book").css({ opacity: "1" });
+        $("#clap")[0].play();
       } else if (count === 12) {
         $(".intro--book").css({ opacity: "0" });
       }
@@ -645,6 +644,9 @@ function clickBtn() {
 function clickBtn2() {
   $(".opening__button--secret").click(function () {
     start2();
+    $('.bg-eye--1').css({ opacity: "0" });
+    $('.bg-eye--2').css({ opacity: "0.3" });
+    $('.bg-eye .cls-1').css({ fill: "#F9EFE1" });
     $("#water")[0].play();
     $(".opening").css({ animation: "btn 1s ease forwards" });
     $(".opening__bg").css({ animation: "btn 1s ease forwards" });
@@ -803,7 +805,7 @@ function changeContent() {
   const minutes = now.getMinutes();
 
 
-  if (hours === 23 && minutes >= 0 && minutes <= 59) {
+  if (hours === 11 && minutes >= 16 && minutes <= 59) {
     clickBtn2();
     $(".opening--main").css({ display: "none" });
     $(".secret").css({ display: "block" });
@@ -820,7 +822,7 @@ function changeContent() {
 
 // ページ読み込み時に一度実行し、その後一定間隔で実行
 changeContent();
-setInterval(changeContent, 60000); // 1分ごとに更新
+// setInterval(changeContent, 60000); // 1分ごとに更新
 
 
 

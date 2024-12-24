@@ -532,6 +532,11 @@ if ($fp !== false) {
             <source src="./audio/step.mp3" type="audio/mpeg">
         </audio>
 
+        <audio id="clap">
+            <source src="./audio/clap.mp3" type="audio/mpeg">
+        </audio>
+
+
         <script src="./jquery-3.7.1.min.js"></script>
         <script src="./script.js"></script>
 </body>
