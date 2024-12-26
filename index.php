@@ -48,7 +48,10 @@ if ($fp !== false) {
 
 <head>
     <meta charset="UTF-8">
+    <!-- 公開時に消す -->
     <meta name="robots" content="noindex">
+    <!-- ここまで -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./destyle.css">
     <link rel="stylesheet" href="./style.min.css">
@@ -56,7 +59,7 @@ if ($fp !== false) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
-    <title>見えない青髭公の城　Web台本</title>
+    <title>『見えない青髭公の城』台本試し読み | 体現帝国</title>
 </head>
 
 <body class="body">
@@ -64,7 +67,7 @@ if ($fp !== false) {
         <div class="opening opening--main">
             <div class="opening__inner">
                 <h1><img src="./images/logo.png" alt="" class="opening__img"></h1>
-                <h2 class="opening__title">WEB台本試し読み</h2>
+                <h2 class="opening__title">台本試し読み</h2>
                 <p class="opening__text">奇妙奇天烈奇奇怪怪<br class="br--sp">ダークメルヘンスッペクタクルショウ<br>『見えない青髭公の城』の始まり始まり。</p>
                 <div class="opening__button--flex">
                     <button class="opening__button opening__button--main">sound<br>ON</button>
@@ -492,7 +495,7 @@ if ($fp !== false) {
             <div class="opening opening--secret">
                 <div class="opening__inner opening__inner--secret">
                     <h1><img src="./images/logo.png" alt="" class="opening__img"></h1>
-                    <h2 class="opening__title">WEB台本試し読み</h2>
+                    <h2 class="opening__title">台本試し読み</h2>
                     <p class="opening__text">私が出かけている間、<br>決してこの鍵の部屋だけは<br class="br--sp">開けてはならないよ。<br>そう、その一番小さな鍵の部屋だ。</p>
                     <div class="opening__button--flex">
                         <button class="opening__button opening__button--secret">sound<br>ON</button>

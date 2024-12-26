@@ -805,7 +805,7 @@ function changeContent() {
   const minutes = now.getMinutes();
 
 
-  if (hours === 21 && minutes >= 23 && minutes <= 59) {
+  if (hours >= 18 || hours < 4) {
     clickBtn2();
     $(".opening--main").css({ display: "none" });
     $(".secret").css({ display: "block" });
