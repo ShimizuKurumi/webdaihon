@@ -622,7 +622,7 @@ html {
 
 .blue-circle {
     background-color: #274798;
-    filter: blur(300px);
+    filter: blur(20vw);
     width: 70%;
     aspect-ratio: 1/1;
     position: absolute;
@@ -663,7 +663,7 @@ html {
     }
 
     &__text {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 }
 

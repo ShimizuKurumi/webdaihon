@@ -574,7 +574,7 @@ function start2() {
         $("#step")[0].play();
       } else if (count === 7) {
         $(".intro--rock").css({ opacity: "1" });
-        $("#clap")[0].play();
+        // $("#clap")[0].play();
       }
       else if (count === 8) {
         $(".intro--rock").css({ opacity: "0" });
@@ -589,7 +589,7 @@ function start2() {
         $("#step")[0].play();
       } else if (count === 11) {
         $(".intro--book").css({ opacity: "1" });
-        $("#clap")[0].play();
+        // $("#clap")[0].play();
       } else if (count === 12) {
         $(".intro--book").css({ opacity: "0" });
       }
@@ -619,7 +619,34 @@ function start2() {
       }
 
       if (count < 1) {
+        $("#door")[0].play();
+      } else if (count < 4) {
+        $('.blue-circle').css({ opacity: "0.8" });
+        $('.bg-eye--1').css({ opacity: "0.3" });
+        $('.bg-eye--2').css({ opacity: "0" });
 
+      } else if (count === 5) {
+        $("#step")[0].play();
+      } else if (count < 7) {
+        $(".intro--rock").css({ opacity: "1" });
+        // $("#clap")[0].play();
+      }
+      else if (count < 8) {
+        $(".intro--rock").css({ opacity: "0" });
+        $('.blue-circle').css({ opacity: "0" });
+        $('.bg-eye--1').css({ opacity: "0" });
+        $('.bg-eye--2').css({ opacity: "0.3" });
+      } else if (count < 9) {
+        $('.bg-eye--1').css({ opacity: "0.3" });
+        $('.bg-eye--2').css({ opacity: "0" });
+        $('.blue-circle').css({ opacity: "1", width: "40%" });
+      } else if (count === 10) {
+        $("#step")[0].play();
+      } else if (count < 11) {
+        $(".intro--book").css({ opacity: "1" });
+        // $("#clap")[0].play();
+      } else if (count < 12) {
+        $(".intro--book").css({ opacity: "0" });
       }
     }
   });
