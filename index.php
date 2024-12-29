@@ -465,7 +465,7 @@ if ($fp !== false) {
             <p class="paragraph--35 paragraph"><span class="paragraph__name">男</span>大宴会とはお前が言ったんだぞ。台本にも書いてある。</p>
             <p class="paragraph--36 paragraph"><span class="paragraph__name">女</span>あ！今台本に無理矢理書き加えましたね。違法行為ですよ。</p>
             <p class="paragraph--37 paragraph"><span class="paragraph__name">男</span>さ、ごちゃごちゃ言ってないで歌うんだ。ほら、もう一つ書き加えるぞ。</p>
-            <p class="paragraph--38 paragraph">続く・・・</p>
+            <p class="paragraph--38 paragraph">この先は演劇にてご覧ください。</p>
 
         </section>
 
@@ -485,7 +485,7 @@ if ($fp !== false) {
             <p class="paragraph2--11 paragraph2"><span class="paragraph__name">男</span>こちらです。こちら。そうそうこちら、こちらこちらこちらこちら『こちら葛飾区亀有公園前派出所　第五巻』。見てください。初版ですよ。表紙にシミ・ヤケあり。作者は秋本治。感じますか？作者秋本の『思考』の剥製です。</p>
             <p class="paragraph2--12 paragraph2"></p>
             <p class="paragraph2--13 paragraph2"><span class="paragraph__name">男</span>人の思考なんてものも剥製に出来るんですね。どんどん行きますよ。慣れてきましたね。次の剥製は凄いですよ。人間の言葉をしゃべります。そのものの特徴を保持したまま保存できるのが剥製というやつなんですね。さっ、もっとよく手元が見えるように照らして。</p>
-            <p class="paragraph2--14 paragraph2">続く・・・</p>
+            <p class="paragraph2--14 paragraph2">この先は演劇にてご覧ください。</p>
 
         </section>
 

@@ -61,6 +61,9 @@ html {
   height: 100vh;
   overflow-y: scroll;
   transition: 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .opening--secret {
   background: url(./images/doa.jpg) no-repeat center/cover;
@@ -73,15 +76,9 @@ html {
   background-color: #0B1632;
 }
 .opening__inner {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  width: 70%;
+  margin-top: 5%;
 }
 .opening__inner--secret {
-  width: 70%;
   line-height: 1.6;
 }
 .opening__img {
@@ -108,7 +105,7 @@ html {
 }
 .opening__button {
   display: block;
-  margin: 0 2%;
+  margin: 0 1vw;
   border: #F9EFE1 1px solid;
   color: #F9EFE1;
   cursor: pointer;
@@ -131,12 +128,10 @@ html {
   width: 100%;
 }
 .opening__credit {
-  position: absolute;
-  right: 3%;
-  bottom: 3%;
   max-width: 80px;
   display: block;
-  transform: translate(-10%, -5%);
+  margin-left: auto;
+  margin-right: 5%;
 }
 .opening__credit-text {
   color: #F9EFE1;

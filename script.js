@@ -805,7 +805,7 @@ function changeContent() {
   const minutes = now.getMinutes();
 
 
-  if (hours >= 18 || hours < 4) {
+  if (hours >= 8 || hours < 4) {
     clickBtn2();
     $(".opening--main").css({ display: "none" });
     $(".secret").css({ display: "block" });
@@ -815,7 +815,7 @@ function changeContent() {
     $(".paragraph__all--2").css({ display: "none" });
     $(".paragraph__all--1").css({ display: "block" });
     $(".secret").css({ display: "none" });
-    $(".opening").css({ display: "block" });
+    $(".opening").css({ display: "flex" });
     clickBtn();
   }
 }

@@ -75,6 +75,9 @@ html {
     // background-size: cover;
     // animation: opening .6s ease forwards;
     transition: .5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     // &__caption {
     //     font-size: 0.85rem;
@@ -99,15 +102,9 @@ html {
     }
 
     &__inner {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        width: 70%;
+        margin-top: 5%;
 
         &--secret {
-            width: 70%;
             line-height: 1.6;
         }
     }
@@ -139,7 +136,7 @@ html {
 
     &__button {
         display: block;
-        margin: 0 2%;
+        margin: 0 1vw;
         border: $color-bg 1px solid;
         color: $color-bg;
         cursor: pointer;
@@ -166,12 +163,10 @@ html {
     }
 
     &__credit {
-        position: absolute;
-        right: 3%;
-        bottom: 3%;
         max-width: 80px;
         display: block;
-        transform: translate(-10%, -5%);
+        margin-left: auto;
+        margin-right: 5%;
     }
 
     &__credit-text {
