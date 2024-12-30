@@ -1,48 +1,3 @@
-<?php
-
-// カウント数が記録されているファイルのパス
-$file_path = 'count.dat';
-
-// クッキーの名前
-$cookie_name = 'page_viewed';
-// クッキーの有効期限（秒）
-$cookie_duration = 3600; // = 1時間
-
-// カウントを保存するファイルが存在しない場合は作成
-if (!file_exists($file_path)) {
-    file_put_contents($file_path, '0');
-}
-
-// ファイルを排他ロックで開く
-$fp = fopen($file_path, 'r+b');
-
-// ファイルのロックに成功した場合のみ処理を続行
-if ($fp !== false) {
-    // ロックを取得
-    if (flock($fp, LOCK_EX)) {
-        // ファイルからカウント数を取得
-        $count = (int)fgets($fp);
-
-        // クッキーが設定されていない場合のみカウントを増やす
-        if (!isset($_COOKIE[$cookie_name])) {
-            // カウントをインクリメント
-            $count++;
-            rewind($fp);
-            fwrite($fp, (string)$count);
-            // クッキーを設定
-            setcookie($cookie_name, '1', time() + $cookie_duration);
-        }
-        // ロックを解放
-        flock($fp, LOCK_UN);
-    }
-    // ファイルを閉じる
-    fclose($fp);
-}
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -59,7 +14,7 @@ if ($fp !== false) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
-    <title>『見えない青髭公の城』台本試し読み | 体現帝国</title>
+    <title>『見えない青髭公の城』台本試し読み特設サイト | 体現帝国</title>
 </head>
 
 <body class="body">
@@ -456,16 +411,7 @@ if ($fp !== false) {
             <p class="paragraph--28 paragraph"><span
                     class="paragraph__name">　</span>私はこうして目が見えないから、近くにおりますが、目空きはどんどんと去っていきました。どうせなら、もっと沢山の人間の眼玉をくり貫いておけば、今頃
                 大宴会でも出来たでしょうに。</p>
-            <p class="paragraph--29 paragraph"><span class="paragraph__name">男</span>見ているのか、見ていないのか。それが問題だ。目玉がない奴なんぞ、そこら中に転がっておる。ほれ、椅子だ椅子を用意しろ。</p>
-            <p class="paragraph--30 paragraph"><span class="paragraph__name">女</span>何をしようと言うんですか。そんな台詞は台本にありませんよ。</p>
-            <p class="paragraph--31 paragraph"><span class="paragraph__name">男</span>椅子を用意しろと言っておる。宴会じゃよ。男が一人戦地に行くんだ。パーティーだ。酒を用意するんじゃ。</p>
-            <p class="paragraph--32 paragraph"><span class="paragraph__name">女</span>宴会？パーティー？また、この人は、何を言い出すのですか。</p>
-            <p class="paragraph--33 paragraph"><span class="paragraph__name">男</span><span class="span-group">目玉が<span class="count-span"><?php echo $count; ?></span>個。この邸にこれだけの客人が来るのは久方ぶりのことだからな。</span></p>
-            <p class="paragraph--34 paragraph"><span class="paragraph__name">女</span>椅子ですね。そんなに宴会がしたいんですか。</p>
-            <p class="paragraph--35 paragraph"><span class="paragraph__name">男</span>大宴会とはお前が言ったんだぞ。台本にも書いてある。</p>
-            <p class="paragraph--36 paragraph"><span class="paragraph__name">女</span>あ！今台本に無理矢理書き加えましたね。違法行為ですよ。</p>
-            <p class="paragraph--37 paragraph"><span class="paragraph__name">男</span>さ、ごちゃごちゃ言ってないで歌うんだ。ほら、もう一つ書き加えるぞ。</p>
-            <p class="paragraph--38 paragraph">この先は演劇にてご覧ください。</p>
+            <p class="paragraph--29 paragraph">この先は演劇にてご覧ください。</p>
 
         </section>
 

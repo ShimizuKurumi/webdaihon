@@ -64,7 +64,7 @@ function start() {
       // クラス名last-childの要素を取得
       console.log("左", count, pCount, currentWrapper);
 
-      if (0 <= count && count < 37) {
+      if (0 <= count && count < 28) {
         count++;
         pCount++;
         //PC処理
@@ -256,17 +256,13 @@ function start() {
 
         $("#bgm")[0].play();
         $(".frame").css({ animation: "framerotate 1.5s ease  11.5s infinite" });
-      } else if (count === 28) {
-        $(".bgRed").css({ backgroundColor: "#333" });
-      } else if (count === 34) {
-        $("#pen")[0].play();
       }
     }
     //右矢印が押された場合 またはタッチ
     if (event.key === "ArrowRight" || touchX >= screenWidth / 2) {
       console.log("右", count, pCount, currentWrapper);
 
-      if (0 < count && count <= 37) {
+      if (0 < count && count <= 28) {
         count--;
         pCount--;
 
@@ -462,10 +458,6 @@ function start() {
         $(".bgRed").css({ opacity: "0", animation: "none" });
 
         $(".frame").css({ animation: "none" });
-      } else if (count < 28) {
-        $(".bgRed").css({ backgroundColor: "rgb(205, 41, 41)" });
-      } else if (count === 34) {
-        $("#pen")[0].play();
       }
     }
   });
@@ -832,7 +824,7 @@ function changeContent() {
   const minutes = now.getMinutes();
 
 
-  if (hours >= 8 || hours < 4) {
+  if (hours === 2 && minutes >= 0 && minutes <= 30) {
     clickBtn2();
     $(".opening--main").css({ display: "none" });
     $(".secret").css({ display: "block" });
@@ -846,8 +838,6 @@ function changeContent() {
     clickBtn();
   }
 }
-
-// ページ読み込み時に一度実行し、その後一定間隔で実行
 changeContent();
 // setInterval(changeContent, 60000); // 1分ごとに更新
 
