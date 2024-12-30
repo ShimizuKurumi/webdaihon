@@ -842,28 +842,6 @@ changeContent();
 // setInterval(changeContent, 60000); // 1分ごとに更新
 
 
-
-//半角から全角
-function toZenkakuNumber(str) {
-  // 半角数字の正規表現
-  const hankakuNumberRegex = /[0-9]/g;
-
-  // 半角数字を全角数字に変換
-  return str.replace(hankakuNumberRegex, (match) => {
-    return String.fromCharCode(match.charCodeAt(0) + 0xFEE0);
-  });
-}
-
-// 変換したいspan要素のidを指定
-const targetSpan = document.querySelector('.count-span');
-
-// span要素のテキストを取得し、全角に変換
-const newText = toZenkakuNumber(targetSpan.textContent);
-
-// 変換後のテキストをspan要素に設定
-targetSpan.textContent = newText;
-
-
 //ミュート
 $(document).ready(function () {
   $('.opening__button--off').click(function () {
