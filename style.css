@@ -586,7 +586,7 @@ html {
   left: 50%;
   z-index: 0;
   transform: translate(-50%, -50%);
-  transition: 0.8s;
+  transition: 0.8s ease;
 }
 .bg-eye--2 {
   opacity: 0;

@@ -132,6 +132,17 @@ function start() {
         $(".bg-eye--2").css({
           opacity: "0",
         });
+      } else if (count === 6) {
+        $(".bg-eye").css({
+          filter: "blur(4px)",
+        });
+
+      } else if (count === 7) {
+        $(".bg-eye").css({
+          filter: "blur(0px)",
+        });
+
+
       } else if (count === 8) {
         $(".bg-eye--1").css({
           opacity: "0",
