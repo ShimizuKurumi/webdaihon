@@ -86,6 +86,8 @@ function start() {
 
 
       if (count === 1) {
+        $("#step-heal")[0].play();
+
         $(".body").css({
           "background-color": "#F9EFE1",
         });
@@ -141,6 +143,10 @@ function start() {
         $(".body").css({
           "background-color": "#000",
         });
+        $(".paragraph__wrapper").css({
+          color: "#000",
+        });
+
         $(".paragraph--9").css({
           color: "#F9EFE1",
         });
@@ -215,6 +221,9 @@ function start() {
       } else if (count === 11) {
         $(".body").css({
           animation: "tikatika .3s step-end forwards",
+        });
+        $(".paragraph--9").css({
+          color: "#F9EFE1",
         });
         $(".paragraph__wrapper").css({
           color: "#F9EFE1",
