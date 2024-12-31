@@ -642,7 +642,7 @@ function start2() {
       } else if (count === 12) {
         $('.bg-eye--1').css({ opacity: "0.3" });
         $('.bg-eye--2').css({ opacity: "0" });
-        $('.blue-circle').css({ opacity: "1", width: "40%" });
+        $('.blue-circle').css({ opacity: "1", width: "30%" });
       } else if (count === 14) {
         $("#step")[0].play();
       } else if (count === 15) {
