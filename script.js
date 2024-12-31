@@ -421,9 +421,9 @@ function start() {
         });
 
       } else if (count < 11) {
-        $(".body").css({
-          animation: "tikatika .3s step-end reverse",
-        });
+        // $(".body").css({
+        //   animation: "tikatika .3s step-end reverse",
+        // });
 
         $(".paragraph__wrapper").css({
           color: "#0B1632",
