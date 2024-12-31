@@ -134,7 +134,7 @@ function start() {
         });
       } else if (count === 6) {
         $(".bg-eye").css({
-          filter: "blur(4px)",
+          filter: "blur(6px)",
         });
         $(".body").css({
           backgroundImage: "url(./images/noize.png)",
@@ -384,7 +384,7 @@ function start() {
           "background-blend-mode": "overlay",
         });
         $(".bg-eye").css({
-          filter: "blur(4px)",
+          filter: "blur(6px)",
         });
       } else if (count < 8) {
         $(".body").css({
