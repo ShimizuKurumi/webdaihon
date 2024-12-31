@@ -138,42 +138,44 @@ function start() {
           opacity: "0.1",
         });
 
-        // $(".body").css({
-        //   "background-color": "#000",
-        // });
-        // $(".paragraph__wrapper").css({
-        //   color: "#F9EFE1",
-        // });
-        // $(".help__text").css({
-        //   color: "#F9EFE1",
-        // });
-        // $(".st00").css({
-        //   fill: "#F9EFE1",
-        // });
-        // $(".line--top").css({
-        //   "background-color": "#F9EFE1",
-        // });
-        // $(".line--bottom").css({
-        //   "background-color": "#F9EFE1",
-        // });
-        // $(".line--right").css({
-        //   "background-color": "#F9EFE1",
-        // });
-        // $(".line--left").css({
-        //   "background-color": "#F9EFE1",
-        // });
-        // $(".cls-1").css({
-        //   fill: "#F9EFE1",
-        // });
-        // $(".bg-eye").css({
-        //   opacity: "0",
-        // });
-        // $(".st0").css({
-        //   fill: "#F9EFE1",
-        // });
+        $(".body").css({
+          "background-color": "#000",
+        });
+        $(".paragraph--9").css({
+          color: "#F9EFE1",
+        });
+        $(".help__text").css({
+          color: "#F9EFE1",
+        });
+        $(".st00").css({
+          fill: "#F9EFE1",
+        });
+        $(".line--top").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".line--bottom").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".line--right").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".line--left").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".cls-1").css({
+          fill: "#F9EFE1",
+        });
+        $(".bg-eye").css({
+          opacity: "0",
+        });
+        $(".st0").css({
+          fill: "#F9EFE1",
+        });
       } else if (count === 9) {
         $("#paper")[0].play();
-
+        $(".paragraph--9").css({
+          color: "#0B1632",
+        });
         $(".body").css({
           "background-color": "#F9EFE1",
         });
@@ -379,39 +381,39 @@ function start() {
           fill: "#0B1632",
         });
       } else if (count < 9) {
-        // $(".body").css({
-        //   "background-color": "#000",
-        // });
-        // $(".paragraph__wrapper").css({
-        //   color: "#F9EFE1",
-        // });
-        // $(".help__text").css({
-        //   color: "#F9EFE1",
-        // });
-        // $(".st00").css({
-        //   fill: "#F9EFE1",
-        // });
-        // $(".line--top").css({
-        //   "background-color": "#F9EFE1",
-        // });
-        // $(".line--bottom").css({
-        //   "background-color": "#F9EFE1",
-        // });
-        // $(".line--right").css({
-        //   "background-color": "#F9EFE1",
-        // });
-        // $(".line--left").css({
-        //   "background-color": "#F9EFE1",
-        // });
-        // $(".cls-1").css({
-        //   fill: "#F9EFE1",
-        // });
-        // $(".bg-eye").css({
-        //   opacity: "0",
-        // });
-        // $(".st0").css({
-        //   fill: "#F9EFE1",
-        // });
+        $(".paragraph--9").css({
+          color: "#F9EFE1",
+        });
+        $(".body").css({
+          "background-color": "#000",
+        });
+        $(".help__text").css({
+          color: "#F9EFE1",
+        });
+        $(".st00").css({
+          fill: "#F9EFE1",
+        });
+        $(".line--top").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".line--bottom").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".line--right").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".line--left").css({
+          "background-color": "#F9EFE1",
+        });
+        $(".cls-1").css({
+          fill: "#F9EFE1",
+        });
+        $(".bg-eye").css({
+          opacity: "0",
+        });
+        $(".st0").css({
+          fill: "#F9EFE1",
+        });
 
         $(".bg-eye--1").css({
           opacity: "0",

@@ -672,6 +672,13 @@ html {
     display: none;
 }
 
+.span {
+    &--black {
+        background-color: #333;
+        color: $color-bg;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .br--sp {
         display: block;

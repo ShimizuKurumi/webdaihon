@@ -653,6 +653,11 @@ html {
   display: none;
 }
 
+.span--black {
+  background-color: #333;
+  color: #F9EFE1;
+}
+
 @media screen and (max-width: 480px) {
   .br--sp {
     display: block;
