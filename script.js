@@ -678,6 +678,8 @@ function clickBtn() {
     $(".frame").css({
       "opacity": "1",
     });
+    $(".glitch").css({ opacity: "0" });
+
   });
 }
 
