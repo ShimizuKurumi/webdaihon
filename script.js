@@ -599,7 +599,7 @@ function start2() {
       // クラス名last-childの要素を取得
       console.log("左", count, pCount, currentWrapper);
 
-      if (0 <= count && count < 14) {
+      if (0 <= count && count < 21) {
         count++;
         pCount++;
         //PC処理
@@ -628,27 +628,27 @@ function start2() {
         $('.bg-eye--1').css({ opacity: "0.3" });
         $('.bg-eye--2').css({ opacity: "0" });
 
-      } else if (count === 6) {
+      } else if (count === 7) {
         $("#step")[0].play();
-      } else if (count === 8) {
+      } else if (count === 9) {
         $(".intro--rock").css({ opacity: "1" });
         // $("#clap")[0].play();
       }
-      else if (count === 9) {
+      else if (count === 10) {
         $(".intro--rock").css({ opacity: "0" });
         $('.blue-circle').css({ opacity: "0" });
         $('.bg-eye--1').css({ opacity: "0" });
         $('.bg-eye--2').css({ opacity: "0.3" });
-      } else if (count === 10) {
+      } else if (count === 12) {
         $('.bg-eye--1').css({ opacity: "0.3" });
         $('.bg-eye--2').css({ opacity: "0" });
         $('.blue-circle').css({ opacity: "1", width: "40%" });
-      } else if (count === 11) {
+      } else if (count === 14) {
         $("#step")[0].play();
-      } else if (count === 12) {
+      } else if (count === 15) {
         $(".intro--book").css({ opacity: "1" });
         // $("#clap")[0].play();
-      } else if (count === 13) {
+      } else if (count === 16) {
         $(".intro--book").css({ opacity: "0" });
       }
     }
@@ -656,7 +656,7 @@ function start2() {
     if (event.key === "ArrowRight" || touchX >= screenWidth / 2) {
       console.log("右", count, pCount, currentWrapper);
 
-      if (0 < count && count <= 14) {
+      if (0 < count && count <= 21) {
         count--;
         pCount--;
 
@@ -676,36 +676,6 @@ function start2() {
         $(elements[currentWrapper]).css("opacity", "1");
       }
 
-      if (count < 1) {
-        $("#door")[0].play();
-      } else if (count < 5) {
-        $('.blue-circle').css({ opacity: "0" });
-        $('.bg-eye--1').css({ opacity: "0" });
-        $('.bg-eye--2').css({ opacity: "0.3" });
-      } else if (count === 6) {
-        $("#step")[0].play();
-      } else if (count < 8) {
-        $(".intro--rock").css({ opacity: "0" });
-        // $("#clap")[0].play();
-      }
-      else if (count < 9) {
-        $(".intro--rock").css({ opacity: "1" });
-        $('.bg-eye--1').css({ opacity: "0.3" });
-        $('.bg-eye--2').css({ opacity: "0" });
-        $('.blue-circle').css({ opacity: "0.8" });
-      } else if (count < 10) {
-        $('.bg-eye--1').css({ opacity: "0" });
-        $('.bg-eye--2').css({ opacity: "0.3" });
-        $('.blue-circle').css({ opacity: "0" });
-
-      } else if (count < 11) {
-        $('.blue-circle').css({ opacity: "1", width: "40%" });
-      } else if (count === 11) {
-        $("#step")[0].play();
-        $(".intro--book").css({ opacity: "0" });
-      } else if (count === 12) {
-        $(".intro--book").css({ opacity: "1" });
-      }
     }
   });
 
@@ -894,7 +864,7 @@ function changeContent() {
   const minutes = now.getMinutes();
 
 
-  if (hours === 22 && minutes >= 0 && minutes <= 30) {
+  if (hours >= 19 || hours < 4) {
     clickBtn2();
     $(".opening--main").css({ display: "none" });
     $(".secret").css({ display: "block" });
