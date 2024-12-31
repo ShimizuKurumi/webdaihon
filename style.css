@@ -65,9 +65,6 @@ html {
   flex-direction: column;
   justify-content: center;
 }
-.opening--secret {
-  background: url(./images/doa.jpg) no-repeat center/cover;
-}
 .opening__bg {
   position: fixed;
   z-index: 1;
