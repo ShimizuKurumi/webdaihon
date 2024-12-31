@@ -136,10 +136,17 @@ function start() {
         $(".bg-eye").css({
           filter: "blur(4px)",
         });
-
+        $(".body").css({
+          backgroundImage: "url(./images/noize.png)",
+          "background-blend-mode": "overlay",
+        });
       } else if (count === 7) {
         $(".bg-eye").css({
           filter: "blur(0px)",
+        });
+        $(".body").css({
+          backgroundImage: "none",
+          "background-blend-mode": "normal",
         });
 
 
@@ -362,6 +369,22 @@ function start() {
         });
         $(".bg-eye--2").css({
           opacity: "0.1",
+        });
+      } else if (count < 6) {
+        $(".bg-eye").css({
+          filter: "blur(0px)",
+        });
+        $(".body").css({
+          backgroundImage: "none",
+          "background-blend-mode": "normal",
+        });
+      } else if (count < 7) {
+        $(".body").css({
+          backgroundImage: "url(./images/noize.png)",
+          "background-blend-mode": "overlay",
+        });
+        $(".bg-eye").css({
+          filter: "blur(4px)",
         });
       } else if (count < 8) {
         $(".body").css({
