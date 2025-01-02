@@ -652,6 +652,12 @@ function start2() {
       } else if (count === 16) {
         $(".intro--book").css({ opacity: "0" });
         $("#clap")[0].play();
+      } else if (count === 18) {
+        $("#tape")[0].play();
+        setTimeout(function () {
+          // audio要素のIDを"myAudio"と仮定
+          $("#bgm-night")[0].play();
+        }, 1000);
       }
     }
     //右矢印が押された場合 またはタッチ
@@ -866,7 +872,7 @@ function changeContent() {
   const minutes = now.getMinutes();
 
 
-  if (hours >= 19 || hours < 4) {
+  if (hours >= 17 || hours < 4) {
     clickBtn2();
     $(".opening--main").css({ display: "none" });
     $(".secret").css({ display: "block" });
