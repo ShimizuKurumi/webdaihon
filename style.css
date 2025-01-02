@@ -97,6 +97,7 @@ html {
   font-size: 1.6rem;
   color: #F9EFE1;
   text-align: center;
+  line-height: 1.4;
   margin-bottom: 1em;
   font-size: min(5.2vw, 1.6rem);
 }
