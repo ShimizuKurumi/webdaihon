@@ -876,7 +876,7 @@ function changeContent() {
     clickBtn2();
     $(".opening--main").css({ display: "none" });
     $(".secret").css({ display: "block" });
-    $(".glitch__img").css({ background: "url(../images/doa.jpg) no-repeat center/cover" });
+    $(".glitch__img").css({ background: "url(./images/doa.jpg) no-repeat center/cover" });
     $(".paragraph__all--2").css({ display: "block" });
     $(".paragraph__all--1").css({ display: "none" });
   } else {
