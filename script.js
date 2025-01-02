@@ -636,7 +636,7 @@ function start2() {
       }
       else if (count === 10) {
         $("#clap")[0].play();
-        $(".intro--rock").css({ opacity: "0" });
+        $(".intro--rock").css({ opacity: "0", "z-index": "0" });
         $('.blue-circle').css({ opacity: "0" });
         $('.bg-eye--1').css({ opacity: "0" });
         $('.bg-eye--2').css({ opacity: "0.3" });
@@ -650,7 +650,7 @@ function start2() {
         $(".intro--book").css({ opacity: "1" });
         // $("#clap")[0].play();
       } else if (count === 16) {
-        $(".intro--book").css({ opacity: "0" });
+        $(".intro--book").css({ opacity: "0", "z-index": "0" });
         $("#clap")[0].play();
       } else if (count === 18) {
         $("#tape")[0].play();
@@ -702,7 +702,10 @@ function clickBtn() {
       "opacity": "1",
     });
     $(".glitch").css({ opacity: "0" });
-
+    setTimeout(function () {
+      // audio要素のIDを"myAudio"と仮定
+      $(".glitch").css({ display: "none" });
+    }, 1000);
   });
 }
 
@@ -719,7 +722,10 @@ function clickBtn2() {
       "opacity": "1",
     });
     $(".glitch").css({ opacity: "0" });
-
+    setTimeout(function () {
+      // audio要素のIDを"myAudio"と仮定
+      $(".glitch").css({ display: "none" });
+    }, 1000);
   });
 }
 
@@ -900,4 +906,8 @@ $(document).ready(function () {
       $(this).prop('muted', true);
     });
   });
+});
+
+$(".start-btn").click(function () {
+  location.reload();
 });
