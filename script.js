@@ -701,6 +701,8 @@ function clickBtn() {
     $(".frame").css({
       "opacity": "1",
     });
+    $(".intro--rock").css({ display: "none" });
+    $(".intro--book").css({ display: "none" });
     $(".glitch").css({ opacity: "0" });
     setTimeout(function () {
       // audio要素のIDを"myAudio"と仮定
