@@ -23,6 +23,7 @@ html {
   font-family: "Zen Old Mincho", serif;
   letter-spacing: 0.07em;
   overflow-x: hidden;
+  background-repeat: no-repeat;
 }
 
 @media (hover: hover) {
@@ -239,8 +240,8 @@ html {
 }
 
 .border-line {
-  text-decoration: underline 1px #F9EFE1;
-  -webkit-text-decoration: underline 1px #F9EFE1;
+  text-decoration: underline #F9EFE1;
+  -webkit-text-decoration: overline #F9EFE1;
   cursor: pointer;
   display: block;
 }

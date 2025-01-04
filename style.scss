@@ -23,6 +23,7 @@ html {
     font-family: "Zen Old Mincho", serif;
     letter-spacing: 0.07em;
     overflow-x: hidden;
+    background-repeat: no-repeat;
 
     // &__inner {
     //     overflow: hidden;
@@ -235,8 +236,8 @@ html {
 }
 
 .border-line {
-    text-decoration: underline 1px $color-bg;
-    -webkit-text-decoration: underline 1px $color-bg;
+    text-decoration: underline $color-bg;
+    -webkit-text-decoration: overline $color-bg;
     cursor: pointer;
     display: block;
 }
