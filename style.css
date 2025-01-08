@@ -256,6 +256,7 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0;
+  display: none;
 }
 
 .bgRed {
