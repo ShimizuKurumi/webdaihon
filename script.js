@@ -647,7 +647,7 @@ function start2() {
       } else if (count === 14) {
         $("#step")[0].play();
       } else if (count === 15) {
-        $(".intro--book").css({ opacity: "1" });
+        $(".intro--book").css({ opacity: "1", "z-index": "8" });
         // $("#clap")[0].play();
       } else if (count === 16) {
         $(".intro--book").css({ opacity: "0", "z-index": "0" });
@@ -662,7 +662,7 @@ function start2() {
     }
     //右矢印が押された場合 またはタッチ
     if (event.key === "ArrowRight" || touchX >= screenWidth / 2) {
-      console.log("右", count, pCount, currentWrapper);
+      console.log("右", count);
 
       if (0 < count && count <= 20) {
         count--;
@@ -671,6 +671,45 @@ function start2() {
         paragraph[count + 1].css({
           opacity: "0",
         });
+      }
+
+      if (count === 1) {
+        $("#door")[0].play();
+      } else if (count === 2) {
+      } else if (count === 3) {
+        $('.blue-circle').css({ opacity: "0" });
+        $('.bg-eye--1').css({ opacity: "0" });
+        $('.bg-eye--2').css({ opacity: "0.3" });
+
+      } else if (count === 8) {
+        $("#step")[0].play();
+        $(".intro--rock").css({ opacity: "0" });
+      } else if (count === 9) {
+        $(".intro--rock").css({ opacity: "1", "z-index": "8" });
+        $('.bg-eye--1').css({ opacity: "0.3" });
+        $('.bg-eye--2').css({ opacity: "0" });
+        $('.blue-circle').css({ opacity: "1", width: "30%" });
+
+      }
+      else if (count === 10) {
+        $("#clap")[0].play();
+        $('.blue-circle').css({ opacity: "0" });
+        $('.bg-eye--1').css({ opacity: "0" });
+        $('.bg-eye--2').css({ opacity: "0.3" });
+      } else if (count === 11) {
+        $('.blue-circle').css({ opacity: "0" });
+        $('.bg-eye--1').css({ opacity: "0" });
+        $('.bg-eye--2').css({ opacity: "0.3" });
+      } else if (count === 14) {
+        $("#step")[0].play();
+        $(".intro--book").css({ opacity: "0", "z-index": "0" });
+      } else if (count === 15) {
+        $(".intro--book").css({ opacity: "1", "z-index": "8" });
+      } else if (count === 16) {
+        $("#clap")[0].play();
+      } else if (count === 17) {
+        $("#bgm-night")[0].pause();
+        $("#bgm-night")[0].currentTime = 0;
       }
 
       if (pCount <= -1 && currentWrapper > 0) {
@@ -880,7 +919,7 @@ function changeContent() {
   const minutes = now.getMinutes();
 
 
-  if (hours >= 19 || hours < 4) {
+  if (hours >= 11 || hours < 4) {
     clickBtn2();
     $(".opening--main").css({ display: "none" });
     $(".secret").css({ display: "block" });
