@@ -599,7 +599,7 @@ function start2() {
       // クラス名last-childの要素を取得
       console.log("左", count, pCount, currentWrapper);
 
-      if (0 <= count && count < 20) {
+      if (0 <= count && count < 18) {
         count++;
         pCount++;
         //PC処理
@@ -630,29 +630,22 @@ function start2() {
 
       } else if (count === 8) {
         $("#step")[0].play();
-      } else if (count === 9) {
-        $(".intro--rock").css({ opacity: "1" });
-        // $("#clap")[0].play();
       }
-      else if (count === 10) {
+      else if (count === 9) {
         $("#clap")[0].play();
         $(".intro--rock").css({ opacity: "0", "z-index": "0" });
         $('.blue-circle').css({ opacity: "0" });
         $('.bg-eye--1').css({ opacity: "0" });
         $('.bg-eye--2').css({ opacity: "0.3" });
-      } else if (count === 12) {
+      } else if (count === 11) {
         $('.bg-eye--1').css({ opacity: "0.3" });
         $('.bg-eye--2').css({ opacity: "0" });
         $('.blue-circle').css({ opacity: "1", width: "30%" });
-      } else if (count === 14) {
+      } else if (count === 13) {
         $("#step")[0].play();
-      } else if (count === 15) {
-        $(".intro--book").css({ opacity: "1", "z-index": "8" });
-        // $("#clap")[0].play();
-      } else if (count === 16) {
-        $(".intro--book").css({ opacity: "0", "z-index": "0" });
+      } else if (count === 14) {
         $("#clap")[0].play();
-      } else if (count === 18) {
+      } else if (count === 16) {
         $("#tape")[0].play();
         setTimeout(function () {
           // audio要素のIDを"myAudio"と仮定
@@ -664,7 +657,7 @@ function start2() {
     if (event.key === "ArrowRight" || touchX >= screenWidth / 2) {
       console.log("右", count);
 
-      if (0 < count && count <= 20) {
+      if (0 < count && count <= 18) {
         count--;
         pCount--;
 
@@ -681,33 +674,27 @@ function start2() {
         $('.bg-eye--1').css({ opacity: "0" });
         $('.bg-eye--2').css({ opacity: "0.3" });
 
-      } else if (count === 8) {
+      } else if (count === 7) {
         $("#step")[0].play();
-        $(".intro--rock").css({ opacity: "0" });
-      } else if (count === 9) {
-        $(".intro--rock").css({ opacity: "1", "z-index": "8" });
+      } else if (count === 8) {
         $('.bg-eye--1').css({ opacity: "0.3" });
         $('.bg-eye--2').css({ opacity: "0" });
         $('.blue-circle').css({ opacity: "1", width: "30%" });
-
       }
-      else if (count === 10) {
+      else if (count === 9) {
         $("#clap")[0].play();
         $('.blue-circle').css({ opacity: "0" });
         $('.bg-eye--1').css({ opacity: "0" });
         $('.bg-eye--2').css({ opacity: "0.3" });
-      } else if (count === 11) {
+      } else if (count === 10) {
         $('.blue-circle').css({ opacity: "0" });
         $('.bg-eye--1').css({ opacity: "0" });
         $('.bg-eye--2').css({ opacity: "0.3" });
-      } else if (count === 14) {
+      } else if (count === 13) {
         $("#step")[0].play();
-        $(".intro--book").css({ opacity: "0", "z-index": "0" });
-      } else if (count === 15) {
-        $(".intro--book").css({ opacity: "1", "z-index": "8" });
-      } else if (count === 16) {
+      } else if (count === 14) {
         $("#clap")[0].play();
-      } else if (count === 17) {
+      } else if (count === 15) {
         $("#bgm-night")[0].pause();
         $("#bgm-night")[0].currentTime = 0;
       }
@@ -923,7 +910,7 @@ function changeContent() {
     clickBtn2();
     $(".opening--main").css({ display: "none" });
     $(".secret").css({ display: "block" });
-    $(".glitch__img").css({ background: "url(./images/doa.jpg) no-repeat center/cover" });
+    $(".glitch__img").css({ background: "url(./images/doa.jpg) no-repeat 46% 50%/cover" });
     $(".paragraph__all--2").css({ display: "block" });
     $(".paragraph__all--1").css({ display: "none" });
   } else {
@@ -949,6 +936,6 @@ $(document).ready(function () {
   });
 });
 
-$(".start-btn").click(function () {
-  location.reload();
-});
+// $(".start-btn").click(function () {
+//   location.reload();
+// });
