@@ -937,6 +937,6 @@ $(document).ready(function () {
   });
 });
 
-// $(".start-btn").click(function () {
-//   location.reload();
-// });
+$(".start-btn").click(function () {
+  location.reload();
+});
