@@ -82,7 +82,6 @@ html {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  margin-bottom: 1em;
 }
 .opening__text {
   color: #F9EFE1;
@@ -422,12 +421,18 @@ html {
 .paragraph--1 {
   opacity: 1;
 }
+.paragraph--29 {
+  display: block;
+}
 
 .paragraph2 {
   padding-left: 0.5em;
   display: flex;
   opacity: 0;
   transition: 0.5s;
+}
+.paragraph2--19 {
+  display: block;
 }
 .paragraph2--1 {
   opacity: 1;

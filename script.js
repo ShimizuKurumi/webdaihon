@@ -200,11 +200,12 @@ function start() {
         $(".paragraph--9").css({
           color: "#0B1632",
         });
+
         $(".body").css({
           "background-color": "#F9EFE1",
         });
         $(".paragraph__wrapper").css({
-          color: "#0B1632",
+          color: "#000",
         });
         $(".help__text").css({
           color: "#0B1632",
@@ -466,9 +467,9 @@ function start() {
         });
 
       } else if (count < 11) {
-        // $(".body").css({
-        //   animation: "tikatika .3s step-end reverse",
-        // });
+        $(".body").css({
+          animation: "tikatika .3s step-end reverse",
+        });
 
         $(".paragraph__wrapper").css({
           color: "#0B1632",

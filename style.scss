@@ -116,7 +116,6 @@ html {
         margin-left: auto;
         margin-right: auto;
         display: block;
-        margin-bottom: 1em;
     }
 
     &__text {
@@ -415,6 +414,10 @@ html {
     &--1 {
         opacity: 1; //1に変える
     }
+
+    &--29 {
+        display: block;
+    }
 }
 
 
@@ -423,6 +426,10 @@ html {
     display: flex;
     opacity: 0;
     transition: .5s;
+
+    &--19 {
+        display: block;
+    }
 
     &--1 {
         opacity: 1;
